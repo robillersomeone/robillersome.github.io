@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
+    <meta property="og:title" content="🌦">
     <meta name="viewport" content="width=device-width">
+    <meta property="og:image" content="assets/imgs/doodles.png">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -16,23 +18,30 @@
                 <!-- title content for left scroll part -->
                 <h3>let's start with a function</h3>
                 <!-- this span is just styling the paragraph of text -->
-                <p> the <span class="mono">gammma</span> function to be exact </p>
-                that makes a distribution with two parameters, the shape and scale.
+                <p> the <span class="mono">gammma</span> function to be exact. </p>
+                <p> that function makes a distribution with a shape and scale, known as parameters.</p>
+                
+                <p>
+                when the  <span class="mono">shape=1</span> and  <span class="mono">scale=2</span> 
+                <br>
+                we get the graph on the right.
+                </p>
             </div>
             <div>
                 <!-- this h3 is the second paragraph of text -->
                 <h3> the distribution changes depending on the shape and scale</h3>
-                <p>this one doubles but the shape and scale.</p>
+                <p>add one to the <span class="mono">shape</span> and  <span class="mono">scale</span> 
+                and we get a very different graph. </p>
             </div>
             <div>
                 <!-- third paragraph -->
                 <h3>the curve flattens</h3>
-                <p>as the shape parameter increases by one again, the curve becomes more normal</p>
+                <p>as the shape and scale increase the distribution </p>
                   <br>               
                   <br>
-                  <p>changing the shape and scale of the gamma distrubtion make other distrubtions</p>
+                  <p>here the <span class="mono">shape=3</span> and  <span class="mono">scale=2</span></p>
                   <br>
-                  <p>starting with the exponential distribution</p>
+                  <p>this distrubtion can help create others, starting with the exponential distribution</p>
 
             </div>
             <div>
@@ -240,5 +249,5 @@ d3.select(window).on('resize', render)
 
 
 </script>
-<p><a href="https://robert-hillery.com">site</a></p>
+<p><a href="https://robert-hillery.com" target="_blank">site</a></p>
 </body>
