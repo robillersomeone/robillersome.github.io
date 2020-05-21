@@ -56,7 +56,8 @@ body{
     }
   
     #sections > div{
-      background: rgba(255,255,255,.5);
+      /* background: rgba(255, 255, 255, 0.893); */
+      background: #ededf2;
       padding: 10px;
       border-top: 1px solid;
       border-bottom: 1px solid;
@@ -70,11 +71,6 @@ body{
     h1{
       margin: 10px;
     }
-  }
-  
-  
-  circle{
-    fill: steelblue;
   }
   
   .mono{

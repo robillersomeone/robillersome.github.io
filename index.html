@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="utf-8">
-    <meta property="og:title" content="🌦">
-    <meta name="viewport" content="width=device-width">
-    <meta property="og:image" content="assets/imgs/doodles.png">
-    <link rel="stylesheet" href="assets/style.css">
+  <title>📊 - distributions </title>
+  <meta charset="utf-8">
+  <meta property="og:title" content="🌦">
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:image" content="assets/imgs/doodles.png">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <!-- main title centered -->
@@ -18,17 +19,24 @@
                 <!-- title content for left scroll part -->
                 <h3>let's start with a function</h3>
                 <!-- this span is just styling the paragraph of text -->
-                <p> the <span class="mono">gammma</span> function to be exact. </p>
+                <p> 
+                  the <span class="mono">gammma</span> function to be exact. 
+                  <br>
+                  <br>
+                  which looks like this equation.
+                </p>
+                <!-- paragraph for the equation for the gamma function -->
+                <p> &#x393; (n) = (n-1)! </p>
                 <p> that function makes a distribution with a shape and scale, known as parameters.</p>
                 
                 <p>
-                when the  <span class="mono">shape=1</span> and  <span class="mono">scale=2</span> 
-                <br>
-                we get the graph on the right.
+                  when the  <span class="mono">shape=1</span> and  <span class="mono">scale=2</span> 
+                  <br>
+                  we get the graph on the right.
                 </p>
             </div>
             <div>
-                <!-- this h3 is the second paragraph of text -->
+                <!-- second paragraph  -->
                 <h3> the distribution changes depending on the shape and scale</h3>
                 <p>add one to the <span class="mono">shape</span> and  <span class="mono">scale</span> 
                 and we get a very different graph. </p>
@@ -41,12 +49,22 @@
                   <br>
                   <p>here the <span class="mono">shape=3</span> and  <span class="mono">scale=2</span></p>
                   <br>
-                  <p>the gamma distrubtion is the building block for others, starting with the exponential distribution</p>
+                  <p>the gamma distrubtion a building block for others, take a look at the exponential distribution</p>
 
             </div>
             <div>
+              <!-- fourth paragraph -->
+              <h3>the exponential distribution</h3>
+              <p> brings us back to the first graph</p>
+              <p>an exponential distrubtion is a type of gamma distribution where the <span class="mono">shape</span> parameter is set to 1</p>
+              <p>
+                
+
+              </p>
+          </div>
+            <div>
                 <h3>
-                  
+                <!-- fifth paragraph -->
                   ...
 
                 </h3>
@@ -89,7 +107,7 @@ var svg = d3.select('#graph').html('')
 // need to find line attrs to start
 // try 1, with path
 var path = svg.append('path')
-// try 2 using https://bl.ocks.org/gordlea/27370d1eea8464b04538e6d8ced39e89
+
 
 var xScale = d3.scaleLinear()
         .domain([0, 20]) // input
@@ -99,6 +117,7 @@ var yScale = d3.scaleLinear()
     .domain([0, .6]) // input 
     .range([height, 0]); // output 
 
+// gamma 1,2
 var dataset = [{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
 {x : 1.300000000000000044e+00, y : 2.610199999999999743e-01},
 {x : 2.549999999999999822e+00, y : 1.397200000000000109e-01},
@@ -118,7 +137,6 @@ var dataset = [{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
 
 // console.log(dataset)
 var line = svg
-//    .append('g')
    .append("path")
      .datum(dataset)
      .attr("d", d3.line()
@@ -126,13 +144,13 @@ var line = svg
        .y(function(d) { return yScale(d.y) })
        .curve(d3.curveMonotoneX)
      )
-     .attr("stroke", function(d){ return 'orange' })
+     .attr("stroke", "black" )
      .style("stroke-width", 1)
      .style("fill", "none")
 
 
 // colors for each new div in the class='sections' div
-  var colors = ['orange', 'purple', 'steelblue', 'pink', 'black']
+  var colors = ["#C86753", "#C86753", 'steelblue', 'pink', 'black']
 
 // for the line //
   var gs = d3.graphScroll()
@@ -153,7 +171,7 @@ var line = svg
         .domain([0, .6]) // input 
         .range([height, 0]); // output 
 
-
+// gamma 1,2 - gamma 2,2 - gamma 3,2 -gamma 3,2 - gamma 1,2
 var new_y = [
 [{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
 {x : 1.300000000000000044e+00, y : 2.610199999999999743e-01},
@@ -206,22 +224,39 @@ var new_y = [
 {x : 1.755000000000000071e+01, y : 2.980000000000000010e-03},
 {x : 1.955000000000000071e+01, y : 1.360000000000000098e-03}],
 
-[{x : 5.000000000000000278e-02, y : 1.499999999999999869e-04},
-{x : 1.300000000000000044e+00, y : 5.514000000000000151e-02},
-{x : 2.549999999999999822e+00, y : 1.135599999999999943e-01},
-{x : 3.799999999999999822e+00, y : 1.349899999999999989e-01},
-{x : 5.049999999999999822e+00, y : 1.276100000000000012e-01},
-{x : 6.299999999999999822e+00, y : 1.063000000000000056e-01},
-{x : 7.549999999999999822e+00, y : 8.172000000000000097e-02},
-{x : 8.800000000000000711e+00, y : 5.942000000000000060e-02},
-{x : 1.005000000000000071e+01, y : 4.148000000000000298e-02},
-{x : 1.130000000000000071e+01, y : 2.807000000000000120e-02},
-{x : 1.255000000000000071e+01, y : 1.853000000000000133e-02},
-{x : 1.380000000000000071e+01, y : 1.200000000000000025e-02},
-{x : 1.505000000000000071e+01, y : 7.640000000000000090e-03},
-{x : 1.630000000000000071e+01, y : 4.789999999999999987e-03},
-{x : 1.755000000000000071e+01, y : 2.980000000000000010e-03},
-{x : 1.955000000000000071e+01, y : 1.360000000000000098e-03}]  
+[{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
+{x : 1.300000000000000044e+00, y : 2.610199999999999743e-01},
+{x : 2.549999999999999822e+00, y : 1.397200000000000109e-01},
+{x : 3.799999999999999822e+00, y : 7.477999999999999925e-02},
+{x : 5.049999999999999822e+00, y : 4.003000000000000308e-02},
+{x : 6.299999999999999822e+00, y : 2.143000000000000113e-02},
+{x : 7.549999999999999822e+00, y : 1.146999999999999929e-02},
+{x : 8.800000000000000711e+00, y : 6.139999999999999625e-03},
+{x : 1.005000000000000071e+01, y : 3.289999999999999956e-03},
+{x : 1.130000000000000071e+01, y : 1.760000000000000063e-03},
+{x : 1.255000000000000071e+01, y : 9.399999999999999719e-04},
+{x : 1.380000000000000071e+01, y : 5.000000000000000104e-04},
+{x : 1.505000000000000071e+01, y : 2.700000000000000035e-04},
+{x : 1.630000000000000071e+01, y : 1.399999999999999877e-04},
+{x : 1.755000000000000071e+01, y : 8.000000000000000654e-05},
+{x : 1.955000000000000071e+01, y : 3.000000000000000076e-05}],
+
+[{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
+{x : 1.300000000000000044e+00, y : 2.610199999999999743e-01},
+{x : 2.549999999999999822e+00, y : 1.397200000000000109e-01},
+{x : 3.799999999999999822e+00, y : 7.477999999999999925e-02},
+{x : 5.049999999999999822e+00, y : 4.003000000000000308e-02},
+{x : 6.299999999999999822e+00, y : 2.143000000000000113e-02},
+{x : 7.549999999999999822e+00, y : 1.146999999999999929e-02},
+{x : 8.800000000000000711e+00, y : 6.139999999999999625e-03},
+{x : 1.005000000000000071e+01, y : 3.289999999999999956e-03},
+{x : 1.130000000000000071e+01, y : 1.760000000000000063e-03},
+{x : 1.255000000000000071e+01, y : 9.399999999999999719e-04},
+{x : 1.380000000000000071e+01, y : 5.000000000000000104e-04},
+{x : 1.505000000000000071e+01, y : 2.700000000000000035e-04},
+{x : 1.630000000000000071e+01, y : 1.399999999999999877e-04},
+{x : 1.755000000000000071e+01, y : 8.000000000000000654e-05},
+{x : 1.955000000000000071e+01, y : 3.000000000000000076e-05}]
 ] 
 // console.log(new_y[i])
     line
