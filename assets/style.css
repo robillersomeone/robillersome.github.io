@@ -56,7 +56,6 @@ body{
     }
   
     #sections > div{
-      /* background: rgba(255, 255, 255, 0.893); */
       background: #f7f7fc;
       padding: 10px;
       border-top: 1px solid;
@@ -71,6 +70,9 @@ body{
     h1{
       margin: 10px;
     }
+    p.site {
+      margin: 20px;
+    }
   }
   
   .mono{
@@ -78,13 +80,5 @@ body{
   }
   
   svg{
-    /* background-color: #eee; */
     background-color: #f7f7fc;
   }
-
-  /* .line {
-    fill: none;
-    stroke: #ffab00;
-    stroke-width: 3;
-}
-   */
