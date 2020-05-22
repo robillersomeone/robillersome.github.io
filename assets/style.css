@@ -69,8 +69,8 @@ body{
     }
   
     /* add for text */
-    #sections > div.graph-scroll-active{
-      opacity: .7;
+    /* #sections > div.graph-scroll-active{
+      opacity: .7; */
     }
 
     pre{
