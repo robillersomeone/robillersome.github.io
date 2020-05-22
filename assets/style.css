@@ -26,8 +26,10 @@ body{
     opacity: .2;
     margin-bottom: 200px;
   }
+  /*  increase for last panel*/
   #sections > div:last-child{
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    margin-bottom: 200px;
   }
   #sections > div.graph-scroll-active{
     opacity: 1;
@@ -50,9 +52,12 @@ body{
     }
   
     #sections{
-      width: auto;
+      /* width: auto;
+      position: relative;
+      margin: 0px auto; */
       position: relative;
       margin: 0px auto;
+      padding-top: 400px;
     }
   
     #sections > div{
@@ -63,6 +68,11 @@ body{
       margin-bottom: 80vh;
     }
   
+    /* add for text */
+    #sections > div.graph-scroll-active{
+      opacity: .7;
+    }
+
     pre{
       overflow: hidden;
     }
@@ -74,7 +84,7 @@ body{
       margin: 20px;
     }
   }
-  
+  /* end of mobile */
   .mono{
     font-family: monospace;
   }
