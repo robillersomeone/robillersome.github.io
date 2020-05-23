@@ -16,7 +16,7 @@
         <div id="graph"></div>
         <div id="sections">
             <div>
-                <!-- title content for left scroll part -->
+                <!-- title content for left scroll part - gamma 1,2 -->
                 <h3>let's start with a function</h3>
                 <!-- this span is just styling the paragraph of text -->
                 <p> 
@@ -27,8 +27,11 @@
                 </p>
                 <!-- paragraph for the equation for the gamma function -->
                 <p> &#x393; (n) = (n-1)! </p>
-                <p> that function along with euler's number, fractions, and some exponents make a distribution with a shape and scale. We call the shape and scale the parameters of the distribution.</p>
-                
+                <p> 
+                  that function along with euler's number, fractions, and some exponents make a distribution with a shape and scale. 
+                  We call the shape and scale the parameters of the distribution.
+                </p>
+                <!-- might add a break -->
                 <p>
                   when the  <span class="mono">shape=1</span> and  <span class="mono">scale=2</span> 
                   <br>
@@ -36,44 +39,100 @@
                 </p>
             </div>
             <div>
-                <!-- second paragraph  -->
+                <!-- second paragraph - gamma 2,2 -->
                 <h3> the distribution changes as the parameters change</h3>
                 <p>add one to the <span class="mono">shape</span> and  <span class="mono">scale</span> 
                 and we get a very different graph. </p>
             </div>
             <div>
-                <!-- third paragraph -->
+                <!-- third paragraph - gamma 3,2 -->
                 <h3>the distribution flattens</h3>
-                <p>as the shape and scale increase. </p>
-                  <br>               
-                  <br>
-                  <p>here the <span class="mono">shape=3</span> and  <span class="mono">scale=2</span></p>
-                  <br>
-                  <p>the gamma distrubtion is a building block for others - let's take a look at the exponential distribution.</p>
+                <p>
+                  as the shape and scale increase. 
+
+                </p>             
+                <p>
+                  here the <span class="mono">shape=3</span> and  <span class="mono">scale=2</span>
+                </p>
+                <p>
+                  the gamma distrubtion is a building block for others - let's take a look at the exponential distribution.
+                </p>
 
             </div>
             <div>
-              <!-- fourth paragraph -->
+              <!-- fourth paragraph - gamma 1,2 -->
               <h3>the exponential distribution</h3>
-              <p> brings us back to the first graph</p>
-              <p>an exponential distrubtion is a type of gamma distribution where the <span class="mono">shape</span> parameter is set to 1.</p>
-              <p>
-                
-
+              <p> 
+                brings us back to the first graph.
               </p>
-          </div>
+              <p>
+                an exponential distrubtion is a type of gamma distribution 
+                where the <span class="mono">shape</span> parameter is set to 1.
+              </p>
+              <p>
+              </p>
+            </div>
             <div>
-                <h3>
                 <!-- fifth paragraph -->
-                 
-                  ...
-
+                <!-- add updated data for exp(1)?  -->
+                <!-- probably gonna goe expo(1) because rate/scale issue -->
+                <h3>
+                  The exponential distrubtion moves as the <span class="mono">scale</span> changes
                 </h3>
                 <p> 
-
+                  <!-- add the fact rate is inverse of scale -->
+                  however, when we think of the exponential distribution moving we talk about the <span class="mono">rate</span> changing. 
+                  <br>
+                  <br>
+                 the <span class="mono">rate</span> is the inverse of the <span class="mono">scale</span> in the gamma distrubtion.
+                  <br> 
+                  <br>
+                  this is because thinking of <span class="mono">rate</span> as the parameter in the exponential distributions
+                  let's us apply it in the world.
+                </p>
+                <p>
+                  here is an exponential distribution with <span class="mono">rate=1</span>
                 </p>
             </div>
-            
+            <div>
+              <h3>
+                <!-- sixth paragraph -->
+                <!-- add data thinking erlang(2,2)... but might do expo(3) just to move more -->
+                getting back to gamma
+              </h3>
+              <p> 
+                while the exponential distrubtion let's us solve some problems, we can solve new ones if we add a bunch of 
+                exponential distrubtions together.
+              </p>
+              
+              <p>this graph is made by <strong>adding</strong> two exponential distributions together, both with <span class="mono">rate=.5</span></p>
+              
+              <p>
+                
+                since the <span class="mono">shape</span> of an exponential distribution is always one, 
+                the <span class="mono">shape</span> parameter of the gamma distrubtion 
+                that comes from adding exponentials will always be a positive whole number.
+                <br>
+                <br>
+                when that happens we call it an <strong>erlang distribution</strong>
+                with a <span class="mono">shape=2</span> and  <span class="mono">scale=2</span>
+                <!-- with both a <span class="mono">shape</span> and a <span class="mono">scale</span> 
+                we just add two exponential distributions. -->
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- seventh paragraph -->
+                <!-- need to add placeholder data for this erlang(2,2) -->
+                <!--  might end this section with recap of expo and erlang -->
+                <!-- expo is a possion process, and thank erlang for better calls -->
+                ...
+              
+              </h3>
+              <p> 
+
+              </p>
+            </div>
         </div>
     </div>
     
@@ -151,7 +210,7 @@
 
 
   // colors for each new div in the class='sections' div
-  var colors = ["#C86753", "#C86753", 'steelblue', 'pink', 'black']
+  var colors = ["#C86753", "#C86753", 'steelblue', 'pink', 'black', "#C86753", 'steelblue']
 
   // for the line //
   var gs = d3.graphScroll()
@@ -172,7 +231,7 @@
         .domain([0, .6]) // input 
         .range([height, 0]); // output 
 
-  // gamma 1,2 - gamma 2,2 - gamma 3,2 -gamma 3,2 - gamma 1,2
+  // gamma 1,2 - gamma 2,2 - gamma 3,2 -gamma 1,2 - expo 1 - erlang 2,2 - erlang 2,2
   var new_y = [
   [{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
   {x : 1.300000000000000044e+00, y : 2.610199999999999743e-01},
@@ -242,22 +301,56 @@
   {x : 1.755000000000000071e+01, y : 8.000000000000000654e-05},
   {x : 1.955000000000000071e+01, y : 3.000000000000000076e-05}],
 
-  [{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
-  {x : 1.300000000000000044e+00, y : 2.610199999999999743e-01},
-  {x : 2.549999999999999822e+00, y : 1.397200000000000109e-01},
-  {x : 3.799999999999999822e+00, y : 7.477999999999999925e-02},
-  {x : 5.049999999999999822e+00, y : 4.003000000000000308e-02},
-  {x : 6.299999999999999822e+00, y : 2.143000000000000113e-02},
-  {x : 7.549999999999999822e+00, y : 1.146999999999999929e-02},
-  {x : 8.800000000000000711e+00, y : 6.139999999999999625e-03},
-  {x : 1.005000000000000071e+01, y : 3.289999999999999956e-03},
-  {x : 1.130000000000000071e+01, y : 1.760000000000000063e-03},
-  {x : 1.255000000000000071e+01, y : 9.399999999999999719e-04},
-  {x : 1.380000000000000071e+01, y : 5.000000000000000104e-04},
-  {x : 1.505000000000000071e+01, y : 2.700000000000000035e-04},
-  {x : 1.630000000000000071e+01, y : 1.399999999999999877e-04},
-  {x : 1.755000000000000071e+01, y : 8.000000000000000654e-05},
-  {x : 1.955000000000000071e+01, y : 3.000000000000000076e-05}]
+  [{x: 0.05, y: 0.95123},
+ {x: 1.3, y: 0.27253},
+ {x: 2.55, y: 0.07808},
+ {x: 3.8, y: 0.02237},
+ {x: 5.05, y: 0.00641},
+ {x: 6.3, y: 0.00184},
+ {x: 7.55, y: 0.00053},
+ {x: 8.8, y: 0.00015},
+ {x: 10.05, y: 4e-05},
+ {x: 11.3, y: 1e-05},
+ {x: 12.55, y: 0.0},
+ {x: 13.8, y: 0.0},
+ {x: 15.05, y: 0.0},
+ {x: 16.3, y: 0.0},
+ {x: 17.55, y: 0.0},
+ {x: 19.55, y: 0.0}],
+
+ [{x: 0.05, y: 0.01219},
+ {x: 1.3, y: 0.16966},
+ {x: 2.55, y: 0.17814},
+ {x: 3.8, y: 0.14209},
+ {x: 5.05, y: 0.10107},
+ {x: 6.3, y: 0.06749},
+ {x: 7.55, y: 0.04329},
+ {x: 8.8, y: 0.02701},
+ {x: 10.05, y: 0.01651},
+ {x: 11.3, y: 0.00994},
+ {x: 12.55, y: 0.00591},
+ {x: 13.8, y: 0.00348},
+ {x: 15.05, y: 0.00203},
+ {x: 16.3, y: 0.00118},
+ {x: 17.55, y: 0.00068},
+ {x: 19.55, y: 0.00028}],
+
+ [{x: 0.05, y: 0.01219},
+ {x: 1.3, y: 0.16966},
+ {x: 2.55, y: 0.17814},
+ {x: 3.8, y: 0.14209},
+ {x: 5.05, y: 0.10107},
+ {x: 6.3, y: 0.06749},
+ {x: 7.55, y: 0.04329},
+ {x: 8.8, y: 0.02701},
+ {x: 10.05, y: 0.01651},
+ {x: 11.3, y: 0.00994},
+ {x: 12.55, y: 0.00591},
+ {x: 13.8, y: 0.00348},
+ {x: 15.05, y: 0.00203},
+ {x: 16.3, y: 0.00118},
+ {x: 17.55, y: 0.00068},
+ {x: 19.55, y: 0.00028}]
   ] 
   // console.log(new_y[i])
     line
