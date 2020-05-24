@@ -55,7 +55,9 @@ svg {
         /* min-height: 2000px;
         min-width: 700px; */
     }
-
+    svg{
+        padding-left: 250px;
+    }
     /* h1{
       margin: 10px;
     } */
