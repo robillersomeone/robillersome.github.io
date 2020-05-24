@@ -8,14 +8,13 @@ body{
     margin: 50px;
     text-align: center;
     line-height: 100px;
-    min-height: 100px;
+    min-height: 90px;
     vertical-align: middle;
   }
   
   /* h1{
     text-align: center;
   } */
-  
   
   #container{
     position: relative;
@@ -32,7 +31,6 @@ body{
   }
   /*  increase for last panel*/
   #sections > div:last-child{
-    /* margin-bottom: 30px; */
     margin-bottom: 200px;
   }
   #sections > div.graph-scroll-active{
@@ -48,6 +46,7 @@ body{
     float: right;
   }
   
+
   @media (max-width: 925px)  {
     #graph{
       width: 100%;
@@ -70,9 +69,6 @@ body{
       margin-bottom: 80vh;
     }
   
-
-    
-
     pre{
       overflow: hidden;
     }
@@ -80,9 +76,11 @@ body{
     h1{
       margin: 10px;
     }
-    p.site {
-      margin: 30px;
+    .about{
+      margin-left: 10px;
+      margin-right: 10px;
     }
+
   }
   /* end of mobile */
   .mono{
@@ -92,3 +90,18 @@ body{
   svg{
     background-color: #f7f7fc;
   }
+
+  /*  footer  */
+  footer{
+    margin-left: 30px;
+  }
+#end{
+  display: flex;                  
+  flex-direction: row;          
+  flex-wrap: nowrap;            
+  justify-content: space-between; 
+}
+#end > div {
+  width: 100px;
+  height: 100px;
+}
