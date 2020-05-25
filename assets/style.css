@@ -11,11 +11,25 @@ body{
     min-height: 90px;
     vertical-align: middle;
   }
-  
-  /* h1{
+  h2{
+    margin: 10px;
     text-align: center;
-  } */
-  
+    line-height: 30px;
+    min-height: 30px;
+    vertical-align: middle;
+  }
+
+header {
+    min-height: 60px;
+    line-height: 30px;
+    height: 30px;
+}
+  #starting{
+    display: flex; justify-content: flex-end;
+    text-align: center;
+    margin-right: 10px;
+  }
+
   #container{
     position: relative;
   }
@@ -51,6 +65,7 @@ body{
     #graph{
       width: 100%;
       margin-left: 0px;
+      /* height: 80%; */
       float: none;
     }
   
@@ -58,6 +73,7 @@ body{
       width: auto;
       position: relative;
       margin: 0px auto;
+      padding-top: 400px;
 
     }
   
