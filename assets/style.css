@@ -3,32 +3,49 @@ body{
     margin: 0px auto;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
-  
+
+header {
+  min-height: 60px;
+  line-height: 30px;
+  height: 30px;
+  font-weight: 340;
+}
+#starting{
+  display: flex; justify-content: flex-end;
+  text-align: center;
+  margin-right: 10px;
+}
+
   h1{
     margin: 50px;
     text-align: center;
     line-height: 100px;
     min-height: 90px;
     vertical-align: middle;
+
   }
-  h2{
-    margin: 10px;
-    text-align: center;
-    line-height: 30px;
-    min-height: 30px;
+ #minimal, #minimal-about {
+    font-weight:525;
+    margin: 0px auto;
+    text-align: left;
+    line-height: 100px;
+    min-height: 70px;
     vertical-align: middle;
   }
-
-header {
-    min-height: 60px;
-    line-height: 30px;
-    height: 30px;
+h2 {
+  font-weight:325;
+  text-align: left;
+  line-height: 30px;
+  min-height: 60px;
+  vertical-align: middle;
 }
-  #starting{
-    display: flex; justify-content: flex-end;
-    text-align: center;
-    margin-right: 10px;
-  }
+
+h3 {
+  font-weight: 525;
+}
+p {
+  font-weight: 340;
+}
 
   #container{
     position: relative;
@@ -62,10 +79,21 @@ header {
   
 
   @media (max-width: 925px)  {
+    #minimal{
+      margin: 10px;
+    }
+
+    #minimal-about{
+      margin: 0px;
+    }
+
+    h2{
+      margin: 10px;
+    }
+    
     #graph{
       width: 100%;
       margin-left: 0px;
-      /* height: 80%; */
       float: none;
     }
   
@@ -89,9 +117,7 @@ header {
       overflow: hidden;
     }
   
-    h1{
-      margin: 10px;
-    }
+   
     .about{
       margin-left: 10px;
       margin-right: 10px;
@@ -110,6 +136,7 @@ header {
   /*  footer  */
   footer{
     margin-left: 30px;
+    font-weight: 340;
   }
 #end{
   display: flex;                  

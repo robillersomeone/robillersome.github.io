@@ -9,9 +9,15 @@
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
+  <header>
+    <div id="starting">
+      <div><a href="../ns-the-details/">the details</a></div>
+    </div>
+  </header>
     <!-- main title -->
-    <h1>hi</h1> 
-    <!-- <h2>the site explores the relationship between distrubtions</h2> -->
+    <h1 id="minimal">hi</h1> 
+    <h2>this site explores the relationship between distributions visually</h2>
+    <!-- <h2>start scrolling to see</h2> -->
     <div id="container" class="container-1">
         <div id="graph"></div>
         <div id="sections">
@@ -28,7 +34,8 @@
                 <p> &#x393; (n) = (n-1)! </p>
                 <p> 
                   that function along with euler's number, fractions, and some exponents make a distribution with a shape and scale. 
-                  we call the shape and scale the parameters of the distribution.
+                  we call the shape and scale the parameters of the distribution and we call the distribution
+                  the <strong>gamma distribution</strong>.
                 </p>
                 <!-- might add a break -->
                 <p>
@@ -115,8 +122,6 @@
                 <br>
                 when that happens we call it an <strong>erlang distribution</strong>, which you can see on the right
                 with a <span class="mono">shape=2</span> and  <span class="mono">scale=2</span>
-                <!-- with both a <span class="mono">shape</span> and a <span class="mono">scale</span> 
-                we just add two exponential distributions. -->
               </p>
             </div>
             <div>
@@ -125,6 +130,7 @@
                 <!-- placeholder data erlang(2,2) -->
                 <!--  might end this section with recap of expo and erlang -->
                 <!-- expo is a poisson process, and thank erlang for better calls -->
+                <!-- erlang predicts wait times in queuess -->
                 <!-- option 2... talk chi -->
                 ...
               

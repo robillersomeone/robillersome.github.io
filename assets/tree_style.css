@@ -8,6 +8,7 @@ header {
   min-height: 60px;
   line-height: 30px;
   height: 30px;
+  font-weight: 340;
 }
 #starting{
   display: flex; justify-content: flex-end;
@@ -16,14 +17,22 @@ header {
   }
 
 
-  h1{
-    margin: 50px;
-    text-align: center;
-    line-height: 100px;
-    min-height: 90px;
-    vertical-align: middle;
-  }
-  
+h1{
+  margin: 50px;
+  text-align: center;
+  line-height: 100px;
+  min-height: 90px;
+  vertical-align: middle;
+}
+#minimal {
+  font-weight:525;
+  margin: 0px auto;
+  text-align: center;
+  line-height: 100px;
+  min-height: 70px;
+  vertical-align: middle;
+}  
+
 .node circle {
   stroke: #ccc;
   stroke-width: .5px;
@@ -70,6 +79,7 @@ svg {
 /* end of mobile */
   footer{
     margin-left: 30px;
+    font-weight: 340;
   }
 
 
