@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body id="top">
   <header>
     <div id="starting">
       <div><a href="../ns-the-details/">the details</a></div>
@@ -131,7 +131,7 @@
                 <!-- placeholder data erlang(2,2) -->
                 <!--  might end this section with recap of expo and erlang -->
                 <!-- expo is a poisson process, and thank erlang for better calls -->
-                <!-- erlang predicts wait times in queuess -->
+                <!-- erlang predicts wait times in queues -->
                 <!-- option 2... talk chi -->
                 ...
               
@@ -144,6 +144,7 @@
                 eighth paragraph
                 placeholder data ?
                  option 1... might end this section with recap of expo and erlang and chi
+                 which are all specific parameterization of the gamma distribution.
                 option 2... go into fractions, beta and f-distrubtions
                 ...
               
@@ -405,10 +406,19 @@
 }
   render()
   d3.select(window).on('resize', render)
+
+  function scrollToTop() {
+    var position =
+        document.body.scrollTop || document.documentElement.scrollTop;
+    if (position) {
+        window.scrollBy(0, -Math.max(1, Math.floor(position / 10)));
+        scrollAnimation = setTimeout("scrollToTop()", 30);
+    } else clearTimeout(scrollAnimation);
+}
 </script>
 <footer>
   <div id="end">
-    <div><a href="../ns/">distributions</a></div>
+    <div><a href="#top" onclick="scrollToTop(); return false">distributions</a></div>
     <div><a href="../ns-the-details/">the details</a></div>
     <div><a href="https://robert-hillery.com" target="_blank">site</a></div>
   </div>
