@@ -128,7 +128,7 @@
             <div>
               <h3>
                 <!-- seventh paragraph -->
-                <!-- data chi(6) -->
+                <!-- data chi (6) -->
                 <!-- option 2... talk chi -->
                 one more gamma 
               </h3>
@@ -173,12 +173,80 @@
             <div>
               <h3>
                 <!-- ninth paragraph
-                placeholder data chi(8)
-                 option 1... let's build a distribution using multiple gamma functions
-                 start fractions, beta and f-distrubtions built from gamma -->
-
+                data beta(4,6)
+                -->
+                the second distribution
+              </h3>
+              <p> 
+                <!-- 
+                  now, instead of picking special values for the parameters of the gamma distribution, let's 
+                  use multiple distributions
+                 -->
+                 the <strong>beta distribtuion</strong> is made of using two independent gamma distributions. 
+              </p>
+              <p> beta(a, b) = (gamma(a, θ) / ( gamma(a,θ) + gamma(b, θ) )</p>
+              <p>
+                where a and b are the two parameters of the beta distribution called alpha and beta. 
+                here we set <span class="mono">alpha=4, beta=6</span>.
+              </p>
+              <p>
+                the beta distribution looks larger on the graph, because it has a different support. 
+                it is defined from <span class="mono">[0,1]</span>, while the gamma function is defined from
+                <span class="mono">[0,∞]</span>, so we zoomed in a little.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- tenth paragraph
+                data beta(3,2)
+                -->
+                functionally speaking
+              </h3>
+              <p> 
+                the beta distribution is named because of the <strong>beta function</strong>. the beta function has two parameters
+                and can be written in terms of the gamma function. 
+              </p>
+              <p> beta(x, y) = ( &#x393; (x) * &#x393; (y) ) / &#x393; (x + y)</p>
+              <p>
+                in this graph we changed the the parameters of the distribution to <span class="mono">alpha=3, beta=2</span>.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- eleventh paragraph
+                data beta(1,1)
+                -->
+                starting from scratch
+              </h3>
+              <p> 
+                if we set the two parameters of the beta distribution to  <span class="mono">alpha=1, beta=1</span>
+                we get a horizontal line, which is called the <strong>uniform distribution</strong>.
+              </p>
+              <p> we can interpret a uniform distribution as every outcome being equally likely. 
+                because of this, we use the uniform parameterizaion of the beta distribution 
+                as a common starting point or conjugate prior in bayesian statitics.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twelfth paragraph
+                data arcsin beta .5,.5
+                -->
+                another starting point
+              </h3>
+              <p> 
+                the <strong> arcsin distribution</strong> is a common prior distribtuion in bayesian statistics as well.
+                it is just another specific parameterization
+                of the beta distribution with <span class="mono">alpha=.5, beta=.5</span>
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- thirteenth paragraph
+                placeholder data : arcsin beta .5,.5 ... will be f-distribution 
+                 the next distribution will be made from the ratio of two gamma distributions
+                -->
                 ...
-              
               </h3>
               <p> 
               </p>
@@ -260,7 +328,9 @@
 
 
   // colors for each new div in the class='sections' div
-  var colors = ["#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black', "#296b0f", 'steelblue', '#6776d1']
+  // take out first blue, probably no green
+  var colors = ["#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black', "#296b0f", 'steelblue', '#6776d1',
+                "#C86753", "#C86753", 'steelblue', '#6776d1']
 
   // for the line //
   var gs = d3.graphScroll()
@@ -281,7 +351,16 @@
         .domain([0, .6]) // input 
         .range([height, 0]); // output 
 
-  // gamma 1,2 - gamma 2,2 - gamma 3,2 -gamma 1,2 - expo 1 - erlang 2,2 - chi 6 - chi 8 - chi 8
+    var xScale_beta = d3.scaleLinear()
+        .domain([0,1])
+        .range([0, width]);
+    
+    var yScale_beta = d3.scaleLinear()
+        .domain([0, 4])
+        .range([height, 0]);
+
+  // gamma 1,2 - gamma 2,2 - gamma 3,2 -gamma 1,2 - expo 1 - erlang 2,2 - chi 6 - chi 8 - 
+  // beta 4,6 - beta 3,2 - beta 1,1 - beta .5,.5 - beta .5,.5
   var new_y = [
   [{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
   {x : 1.300000000000000044e+00, y : 2.610199999999999743e-01},
@@ -419,39 +498,132 @@
  {x: 17.55, y: 0.0087},
  {x: 19.55, y: 0.00443}],
 
- [{x: 0.05, y: 0.0},
- {x: 1.3, y: 0.01195},
- {x: 2.55, y: 0.04826},
- {x: 3.8, y: 0.08549},
- {x: 5.05, y: 0.1074},
- {x: 6.3, y: 0.11162},
- {x: 7.55, y: 0.10283},
- {x: 8.8, y: 0.08715},
- {x: 10.05, y: 0.06949},
- {x: 11.3, y: 0.05287},
- {x: 12.55, y: 0.03877},
- {x: 13.8, y: 0.02759},
- {x: 15.05, y: 0.01915},
- {x: 16.3, y: 0.01303},
- {x: 17.55, y: 0.0087},
- {x: 19.55, y: 0.00443}]
+ [{x: 0.01, y: 0.00048}, 
+ {x: 0.06, y: 0.0799}, 
+ {x: 0.11, y: 0.37459}, 
+ {x: 0.16, y: 0.86335}, 
+ {x: 0.21, y: 1.43623}, 
+ {x: 0.26, y: 1.96566}, 
+ {x: 0.31, y: 2.34834}, 
+ {x: 0.36, y: 2.52486}, 
+ {x: 0.41, y: 2.48337}, 
+ {x: 0.46, y: 2.25254}, 
+ {x: 0.51, y: 1.88852}, 
+ {x: 0.56, y: 1.45968}, 
+ {x: 0.61, y: 1.03215}, 
+ {x: 0.66, y: 0.65835}, 
+ {x: 0.71, y: 0.36999}, 
+ {x: 0.76, y: 0.17617}, 
+ {x: 0.81, y: 0.06632}, 
+ {x: 0.86, y: 0.01724}, 
+ {x: 0.91, y: 0.00224}, 
+ {x: 0.99, y: 0.0}],
+
+ [{x: 0.01, y: 0.00119}, 
+ {x: 0.06, y: 0.04061}, 
+ {x: 0.11, y: 0.12923}, 
+ {x: 0.16, y: 0.25805}, 
+ {x: 0.21, y: 0.41807}, 
+ {x: 0.26, y: 0.60029}, 
+ {x: 0.31, y: 0.79571}, 
+ {x: 0.36, y: 0.99533}, 
+ {x: 0.41, y: 1.19015}, 
+ {x: 0.46, y: 1.37117}, 
+ {x: 0.51, y: 1.52939}, 
+ {x: 0.56, y: 1.65581}, 
+ {x: 0.61, y: 1.74143}, 
+ {x: 0.66, y: 1.77725}, 
+ {x: 0.71, y: 1.75427}, 
+ {x: 0.76, y: 1.66349}, 
+ {x: 0.81, y: 1.49591}, 
+ {x: 0.86, y: 1.24253}, 
+ {x: 0.91, y: 0.89435}, 
+ {x: 0.99, y: 0.11761}],
+
+ [{x: 0.01, y: 1.0},
+{x: 0.06, y: 1.0}, 
+{x: 0.11, y: 1.0}, 
+{x: 0.16, y: 1.0}, 
+{x: 0.21, y: 1.0}, 
+{x: 0.26, y: 1.0}, 
+{x: 0.31, y: 1.0}, 
+{x: 0.36, y: 1.0}, 
+{x: 0.41, y: 1.0}, 
+{x: 0.46, y: 1.0}, 
+{x: 0.51, y: 1.0}, 
+{x: 0.56, y: 1.0}, 
+{x: 0.61, y: 1.0}, 
+{x: 0.66, y: 1.0}, 
+{x: 0.71, y: 1.0}, 
+{x: 0.76, y: 1.0}, 
+{x: 0.81, y: 1.0}, 
+{x: 0.86, y: 1.0}, 
+{x: 0.91, y: 1.0}, 
+{x: 0.99, y: 1.0}],
+
+ [{x: 0.01, y: 3.19913}, 
+ {x: 0.06, y: 1.34033}, 
+ {x: 0.11, y: 1.01732}, 
+ {x: 0.16, y: 0.86826}, 
+ {x: 0.21, y: 0.7815}, 
+ {x: 0.26, y: 0.72568}, 
+ {x: 0.31, y: 0.68825}, 
+ {x: 0.36, y: 0.66315}, 
+ {x: 0.41, y: 0.64719}, 
+ {x: 0.46, y: 0.63867}, 
+ {x: 0.51, y: 0.63675}, 
+ {x: 0.56, y: 0.64125}, 
+ {x: 0.61, y: 0.65261}, 
+ {x: 0.66, y: 0.67195}, 
+ {x: 0.71, y: 0.70149}, 
+ {x: 0.76, y: 0.74531}, 
+ {x: 0.81, y: 0.81139}, 
+ {x: 0.86, y: 0.91735}, 
+ {x: 0.91, y: 1.11226}, 
+ {x: 0.99, y: 3.19913}],
+
+ [{x: 0.01, y: 3.19913}, 
+ {x: 0.06, y: 1.34033}, 
+ {x: 0.11, y: 1.01732}, 
+ {x: 0.16, y: 0.86826}, 
+ {x: 0.21, y: 0.7815}, 
+ {x: 0.26, y: 0.72568}, 
+ {x: 0.31, y: 0.68825}, 
+ {x: 0.36, y: 0.66315}, 
+ {x: 0.41, y: 0.64719}, 
+ {x: 0.46, y: 0.63867}, 
+ {x: 0.51, y: 0.63675}, 
+ {x: 0.56, y: 0.64125}, 
+ {x: 0.61, y: 0.65261}, 
+ {x: 0.66, y: 0.67195}, 
+ {x: 0.71, y: 0.70149}, 
+ {x: 0.76, y: 0.74531}, 
+ {x: 0.81, y: 0.81139}, 
+ {x: 0.86, y: 0.91735}, 
+ {x: 0.91, y: 1.11226}, 
+ {x: 0.99, y: 3.19913}]
+
   ] 
-  // console.log(new_y[i])
-    line
-      .datum(new_y[i])
+  // console.log(new_y[i].length)
+  line
+    .datum(new_y[i])
     .transition()
     .duration(1000)
     .attr("d", d3.line()
-         .x(function(d) { return xScale(d.x) })
-         .y(function(d) { return yScale(d.y) })
-           .curve(d3.curveMonotoneX)
-
-       )
+          .x(function(d) { 
+            {
+              return new_y[i].length >17 ?  xScale_beta(d.x) : xScale(d.x) 
+              };
+            })
+          .y(function(d) { 
+            return new_y[i].length >17 ?  yScale_beta(d.y) : yScale(d.y)
+            })
+          .curve(d3.curveMonotoneX)
+      )
     .attr("stroke", colors[i])
        .style("stroke-width", 1)
      .style("fill", "none")
       })
-
 
   d3.select('#source')
       .styles({'margin-bottom': window.innerHeight - 450 + 'px', padding: '150px'})
