@@ -26,55 +26,9 @@
 <h1 id="minimal"l>another way to look at it</h1>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 <script>
-  var treeData = [
-  {
-    "name": "gamma",
-    "parent": "null",
-    "children": [
-      {
-        "name": "specific case of gamma",
-        "parent": "Top Level",
-        "children": [
-          {
-            "name": "exponential", 
-            "shape": "when shape=1",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "erlang",
-            "shape": "when shape is any integer",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "chi-squared",
-            "shape": "when scale=2",
-            "parent": "Level 2: A"
-          }
-        ]
-      },
-      {
-        "name": "more than one gamma",
-        "parent": "Top Level",
-        "children": [
-          {
-            "name": "beta", 
-            "shape": "gamma/ sum of two gammas",
-            "parent": "Level 2: A"
-          },
-          {
-            "name": "f-distribution",
-            "shape": "ratio of 2 chi-squared",
-            "parent": "Level 2: A"
-          }
-        ]
-      }
-    ]
-  }
-];
-
   // set all of these at the same time
   var margin = {top: 40, right: 90, bottom: 30, left: 90},
-    width = 750 - margin.left - margin.right,
+    width = 650 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
     
   var i = 0;
@@ -91,9 +45,11 @@
   .append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  root = treeData[0];  
-
+d3.json("assets/data/treeData.json", function(error, treeData) {
+  root = treeData[0];
   update(root);
+});
+
 // console.log(root)
   function update(source) {
   

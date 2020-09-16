@@ -1,0 +1,86 @@
+[
+    {
+      "name": "gamma",
+      "parent": "null",
+      "children": [
+        {
+          "name": "specific case of gamma",
+          "parent": "Top Level",
+          "children": [
+            {
+              "name": "exponential", 
+              "shape": "when shape=1",
+              "parent": "Level 2: A",
+              "children": [
+                {
+                  "name": "rayleigh",
+                  "shape": "square root of exponential",
+                  "parent": "Level 3: A"
+                },
+                {
+                  "name": "gumbel",
+                  "shape": "negative log exponential",
+                  "parent": "Level 3: A"
+                    }
+              ]
+            },
+            {
+              "name": "erlang",
+              "shape": "when shape is any integer",
+              "parent": "Level 2: A"
+            },
+            {
+              "name": "chi-squared",
+              "shape": "when scale=2",
+              "parent": "Level 2: A"
+            }
+          ]
+        },
+        {
+          "name": "more than one gamma",
+          "parent": "Top Level",
+          "children": [
+            {
+              "name": "beta", 
+              "shape": "gamma/ sum of two gammas",
+              "parent": "Level 2: B",
+              "children": [
+                {
+                  "name": "uniform",
+                  "shape": "beta(1,1)",
+                  "parent": "Level 3: D",
+                  "children": [
+                    {
+                      "name": "fréchet",
+                      "shape": "negative log uniform",
+                      "parent": "Level 4: A"
+                    },
+                    {
+                      "name": "weibull",
+                      "shape": "negative natural log uniform",
+                      "parent": "Level 4: A"
+                    }
+                  ]
+                },
+                {
+                  "name": "arcsin",
+                  "shape": "beta(.5,.5)",
+                  "parent": "Level 3: D"
+                }
+              ]
+            },
+            {
+              "name": "f-distribution",
+              "shape": "ratio of 2 chi-squared",
+              "parent": "Level 2: B"
+            },
+            {
+              "name": "laplace",
+              "shape": "double exponential",
+              "parent": "Level 2: B"
+            }
+          ]
+        }
+      ]
+    }
+  ]
