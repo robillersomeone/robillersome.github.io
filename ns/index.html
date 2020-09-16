@@ -31,7 +31,7 @@
         <div id="graph"></div>
         <div id="sections">
             <div>
-                <!-- title content for left scroll part - gamma 1,2 -->
+                <!-- title content for left scroll part - gamma(1,2) -->
                 <h3>let's start with a function</h3>
                 <p> 
                   the <strong>gamma</strong> function to be exact. 
@@ -54,13 +54,13 @@
                 </p>
             </div>
             <div>
-                <!-- second paragraph - gamma 2,2 -->
+                <!-- second paragraph - gamma(2,2) -->
                 <h3> the distribution changes as the parameters change</h3>
                 <p>add one to the <span class="mono">shape</span> and  <span class="mono">scale</span> 
                 and we get a very different graph. </p>
             </div>
             <div>
-                <!-- third paragraph - gamma 3,2 -->
+                <!-- third paragraph - gamma(3,2) -->
                 <h3>the distribution flattens</h3>
                 <p>
                   as the shape and scale increase. 
@@ -75,7 +75,7 @@
 
             </div>
             <div>
-              <!-- fourth paragraph - gamma 1,2 -->
+              <!-- fourth paragraph - gamma(1,2) -->
               <h3>the exponential distribution</h3>
               <p> 
                 brings us back to the first graph.
@@ -88,9 +88,8 @@
               </p>
             </div>
             <div>
-                <!-- fifth paragraph -->
-                <!-- add updated data for exp(1)  -->
-                <!-- probably gonna goe expo(1) because rate/scale issue -->
+                <!-- fifth paragraph - exp(1) -->
+                <!-- probably gonna go expo(1) because rate/scale issue -->
                 <h3>
                   the exponential distribution moves as the <span class="mono">scale</span> changes
                 </h3>
@@ -111,8 +110,7 @@
             </div>
             <div>
               <h3>
-                <!-- sixth paragraph -->
-                <!-- data erlang(2,2)... but might do expo(3) just to move more -->
+                <!-- sixth paragraph - data erlang(2,2) -->
                 getting back to gamma
               </h3>
               <p> 
@@ -135,9 +133,7 @@
             </div>
             <div>
               <h3>
-                <!-- seventh paragraph -->
-                <!-- data chi (6) -->
-                <!-- option 2... talk chi -->
+                <!-- seventh paragraph - chi(6) -->
                 one more gamma 
               </h3>
               <p> 
@@ -157,8 +153,7 @@
             </div>
             <div>
               <h3>
-                <!-- eighth paragraph
-                 data  chi (8) -->
+                <!-- eighth paragraph - chi (8) -->
                 tying it together
               
               </h3>
@@ -180,9 +175,7 @@
             </div>
             <div>
               <h3>
-                <!-- ninth paragraph
-                data beta(4,6)
-                -->
+                <!-- ninth paragraph - beta(4,6) -->
                 the second distribution
               </h3>
               <p> 
@@ -205,9 +198,7 @@
             </div>
             <div>
               <h3>
-                <!-- tenth paragraph
-                data beta(3,2)
-                -->
+                <!-- tenth paragraph - beta(3,2) -->
                 functionally speaking
               </h3>
               <p> 
@@ -221,9 +212,7 @@
             </div>
             <div>
               <h3>
-                <!-- eleventh paragraph
-                data beta(1,1)
-                -->
+                <!-- eleventh paragraph - beta(1,1) -->
                 starting from scratch
               </h3>
               <p> 
@@ -237,9 +226,7 @@
             </div>
             <div>
               <h3>
-                <!-- twelfth paragraph
-                data arcsin beta .5,.5
-                -->
+                <!-- twelfth paragraph - arcsin beta(.5,.5) -->
                 another starting point
               </h3>
               <p> 
@@ -250,19 +237,96 @@
             </div>
             <div>
               <h3>
-                <!-- thirteenth paragraph
-                placeholder data : arcsin beta .5,.5 ... will be f-distribution 
-                 the next distribution will be made from the ratio of two gamma distributions
-                -->
+                <!-- thirteenth paragraph - laplace(0,1) -->
+                making a point
+              </h3>
+              <p> 
+                 if we divide two standard uniform distributions both with parameters <span class="mono">alpha=0, beta=1</span> and then take the log, we get the <strong>laplace distribution</strong>.
+              </p>
+              <p>laplace(0,1) = log( uniform(0,1) / uniform(0,1) )</p>
+              <p> 
+                the <strong>laplace distribution</strong> has two parameters, here they are <span class="mono">location=10, scale=1</span>. if the <span class="mono">location=0</span> then we would only see the right side of the peak.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- fourteenth paragraph - f(2,2) -->
+                testing it out 
+              </h3>
+              <p> 
+                using two laplace distributions, we can build another distribution by dividing them. This makes a common distribution in statitical testing - the <strong>f distribution</strong>.        
+              </p>
+              <p> 
+                the <strong>f distribution</strong> is known as a ratio distribution ~ another common way to make it is by taking the ratio of two <strong>chi-squared distributions</strong> (which are really just gamma distributions).
+              </p>
+              <p>while the <strong>chi-squared distribution</strong> let's us do the test for indepedence, with the <strong>f distribution</strong> we can do analysis of variance (called ANOVA for short) and the f-test for finding the best model in a linear regression.</p> 
+            </div>
+            <div>
+              <h3>
+                <!-- fifteenth paragraph - rayleigh(1) -->
+                raylly?
+              </h3>
+              <p> 
+                  the <strong>rayleigh distribution</strong> has one parameter, the <span class="mono">scale</span>, here the <span class="mono">scale=1</span>. when that happens it can be thought of as a case of the chi-squared distribution where the <span class="mono">degrees of freedom=2</span>
+              </p>
+              <p>
+                when looking at wind speed, the magnitude of the speed tends to follow a <strong>rayleigh distribution</strong>, and generally this distribution is helpful when looking for the magnitude of components.
+              </p>
+              <p> 
+                the <strong>laplace distribution</strong>, <strong>f distribution</strong>, and <strong>rayleigh distribution</strong> can all by made by subtracting, dividing, or taking a square root of a specific parameterization of the <strong>gamma distribution</strong>.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- sixteenth paragraph - gumbel(1,2) -->
+                getting extreme
+              </h3>
+              <p> 
+                 the next three distribution we are going to make by taking the negative log (or natural log) of a distribution we have already seen. if we take the negative log of the  <strong>exponential distribution</strong> with the <span class="mono">rate=1</span> we get the <strong>gumbel distribution</strong>.
+              </p>
+              <p>gumbel(0,1) = - log( exponential(1) )</p>
+              <p> 
+                the <strong>gumbel distribution</strong> has two parameters, the <span class="mono">location</span> and <span class="mono">scale</span>.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- seventeenth paragraph - fréchet(2,1,0)-->
+                from the uniform
+              </h3>
+              <p> 
+                the <strong>fréchet distribution</strong> is built from taking the negative log of the <strong>uniform distribution</strong> and has three parameters <span class="mono">shape</span>, <span class="mono">scale</span> and <span class="mono">location of minimum</span>.
+              </p>
+              <p>fréchet(shape, scale, location) = location + scale * (- log( uniform(0,1) ) ) ^ ( -1 / shape)</p>
+              <p> 
+                the formula looks more complicated than the gumbel, but we normally set the <span class="mono">scale=1</span> and <span class="mono">location of minimum=0</span>, so the formula ends up being... 
+              </p>
+              <p>fréchet(shape, scale, location) = 1 / (- log( uniform(0,1) ) )</p>
+              <p> 
+                or just 1 divided by the negative log of the <strong>uniform distribution</strong>, here <span class="mono">shape=2</span>, <span class="mono">scale=1</span> and <span class="mono">location of minimum=0</span>
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- eighteenth paragraph - weibull(1,1) -->
+                the last log
+              </h3>
+              <p> 
+                 the last distribution we will build is with the negative natural log and is called the <strong>weibull distribution</strong>. it is very similar to the <strong>fréchet distribution</strong>, but only has two parameters <span class="mono">scale</span> and <span class="mono">shape</span>.
+  
+              </p>
+              <p>weibull(scale, shape) = scale * (- ln( uniform(0,1) ) ) ^ (1 / shape)</p>
+              <p> 
+                the <strong>gumbel</strong>, <strong>fréchet</strong>, and <strong>weibull distributions</strong> are all extreme value distributions used in predicting when extreme weather events (like floods) will occur.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- nineteenth paragraph -  place holder - weibull(1,2) -->
                 ...
               </h3>
               <p> 
-                <!-- ratio of two chi-squared distributions, so naturally, its used in lots of tests in statistics -->
-                <!-- use the f-distribution in regresssion and ANOVA -->
-              </p>
-              <p> 
-                <!-- the f-distribution can be made with the beta, or gamma distribution as well -->
-
+                <!-- after this? -->                
               </p>
             </div>
         </div>
@@ -344,7 +408,7 @@
   // colors for each new div in the class='sections' div
   // take out first blue, probably no green
   var colors = ["#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black', "#296b0f", 'steelblue', '#6776d1',
-                "#C86753", "#C86753", 'steelblue', '#6776d1']
+                "#C86753", "#C86753", 'steelblue', '#6776d1', "#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black']
 
   // for the line //
   var gs = d3.graphScroll()
@@ -371,6 +435,14 @@
     
     var yScale_beta = d3.scaleLinear()
         .domain([0, 4])
+        .range([height, 0]);
+    
+    var xScale_f = d3.scaleLinear()
+        .domain([0,5])
+        .range([0, width]);
+    
+    var yScale_f = d3.scaleLinear()
+        .domain([0, 2])
         .range([height, 0]);
 
   // gamma 1,2 - gamma 2,2 - gamma 3,2 -gamma 1,2 - expo 1 - erlang 2,2 - chi 6 - chi 8 - 
@@ -527,9 +599,7 @@
  {x: 0.61, y: 1.03215}, 
  {x: 0.66, y: 0.65835}, 
  {x: 0.71, y: 0.36999}, 
- {x: 0.76, y: 0.17617}, 
  {x: 0.81, y: 0.06632}, 
- {x: 0.86, y: 0.01724}, 
  {x: 0.91, y: 0.00224}, 
  {x: 0.99, y: 0.0}],
 
@@ -549,9 +619,7 @@
  {x: 0.66, y: 1.77725}, 
  {x: 0.71, y: 1.75427}, 
  {x: 0.76, y: 1.66349}, 
- {x: 0.81, y: 1.49591}, 
  {x: 0.86, y: 1.24253}, 
- {x: 0.91, y: 0.89435}, 
  {x: 0.99, y: 0.11761}],
 
  [{x: 0.01, y: 1.0},
@@ -570,9 +638,7 @@
 {x: 0.66, y: 1.0}, 
 {x: 0.71, y: 1.0}, 
 {x: 0.76, y: 1.0}, 
-{x: 0.81, y: 1.0}, 
 {x: 0.86, y: 1.0}, 
-{x: 0.91, y: 1.0}, 
 {x: 0.99, y: 1.0}],
 
  [{x: 0.01, y: 3.19913}, 
@@ -590,33 +656,147 @@
  {x: 0.61, y: 0.65261}, 
  {x: 0.66, y: 0.67195}, 
  {x: 0.71, y: 0.70149}, 
- {x: 0.76, y: 0.74531}, 
  {x: 0.81, y: 0.81139}, 
- {x: 0.86, y: 0.91735}, 
  {x: 0.91, y: 1.11226}, 
  {x: 0.99, y: 3.19913}],
-
- [{x: 0.01, y: 3.19913}, 
- {x: 0.06, y: 1.34033}, 
- {x: 0.11, y: 1.01732}, 
- {x: 0.16, y: 0.86826}, 
- {x: 0.21, y: 0.7815}, 
- {x: 0.26, y: 0.72568}, 
- {x: 0.31, y: 0.68825}, 
- {x: 0.36, y: 0.66315}, 
- {x: 0.41, y: 0.64719}, 
- {x: 0.46, y: 0.63867}, 
- {x: 0.51, y: 0.63675}, 
- {x: 0.56, y: 0.64125}, 
- {x: 0.61, y: 0.65261}, 
- {x: 0.66, y: 0.67195}, 
- {x: 0.71, y: 0.70149}, 
- {x: 0.76, y: 0.74531}, 
- {x: 0.81, y: 0.81139}, 
- {x: 0.86, y: 0.91735}, 
- {x: 0.91, y: 1.11226}, 
- {x: 0.99, y: 3.19913}]
-
+// laplace(10,1) 
+[{x: 0.05, y: 2e-05}, 
+{x: 1.3, y: 8e-05}, 
+{x: 2.55, y: 0.00029}, 
+{x: 3.8, y: 0.00101}, 
+{x: 5.05, y: 0.00354}, 
+{x: 6.3, y: 0.01236}, 
+{x: 7.55, y: 0.04315}, 
+{x: 8.8, y: 0.1506}, 
+{x: 10.05, y: 0.47561}, 
+{x: 11.3, y: 0.13627}, 
+{x: 12.55, y: 0.03904}, 
+{x: 13.8, y: 0.01119}, 
+{x: 15.05, y: 0.0032}, 
+{x: 16.3, y: 0.00092}, 
+{x: 17.55, y: 0.00026}, 
+{x: 19.55, y: 4e-05}],
+// f(2,2)
+[{x: 0.05, y: 0.90703}, 
+{x: 0.3, y: 0.59172}, 
+{x: 0.55, y: 0.41623}, 
+{x: 0.8, y: 0.30864}, 
+{x: 1.05, y: 0.23795}, 
+{x: 1.3, y: 0.18904}, 
+{x: 1.55, y: 0.15379}, 
+{x: 1.8, y: 0.12755}, 
+{x: 2.05, y: 0.1075}, 
+{x: 2.3, y: 0.09183}, 
+{x: 2.55, y: 0.07935}, 
+{x: 2.8, y: 0.06925}, 
+{x: 3.05, y: 0.06097}, 
+{x: 3.3, y: 0.05408}, 
+{x: 3.55, y: 0.0483}, 
+{x: 3.8, y: 0.0434}, 
+{x: 4.05, y: 0.03921}, 
+{x: 4.3, y: 0.0356}, 
+{x: 4.55, y: 0.03246}, 
+{x: 4.95, y: 0.02825}],
+// rayleigh(1)
+[{x: 0.05, y: 0.04994}, 
+{x: 0.3, y: 0.2868}, 
+{x: 0.55, y: 0.4728}, 
+{x: 0.8, y: 0.58092}, 
+{x: 1.05, y: 0.60504}, 
+{x: 1.3, y: 0.55842}, 
+{x: 1.55, y: 0.46627}, 
+{x: 1.8, y: 0.35622}, 
+{x: 2.05, y: 0.25072}, 
+{x: 2.3, y: 0.16331}, 
+{x: 2.55, y: 0.09875}, 
+{x: 2.8, y: 0.05556}, 
+{x: 3.05, y: 0.02913}, 
+{x: 3.3, y: 0.01425}, 
+{x: 3.55, y: 0.00651}, 
+{x: 3.8, y: 0.00278}, 
+{x: 4.05, y: 0.00111}, 
+{x: 4.3, y: 0.00042}, 
+{x: 4.55, y: 0.00015}, 
+{x: 4.95, y: 2e-05}],
+// gumbel(1,2)
+[{x: 0.05, y: 0.16103}, 
+{x: 1.3, y: 0.18198}, 
+{x: 2.55, y: 0.14532}, 
+{x: 3.8, y: 0.09635}, 
+{x: 5.05, y: 0.05784}, 
+{x: 6.3, y: 0.03292}, 
+{x: 7.55, y: 0.01821}, 
+{x: 8.8, y: 0.00992}, 
+{x: 10.05, y: 0.00536}, 
+{x: 11.3, y: 0.00288}, 
+{x: 12.55, y: 0.00155}, 
+{x: 13.8, y: 0.00083}, 
+{x: 15.05, y: 0.00044}, 
+{x: 16.3, y: 0.00024}, 
+{x: 17.55, y: 0.00013}, 
+{x: 19.55, y: 5e-05}],
+// fréchet(2,1,0)
+[{x: 0.05, y: 0.0}, 
+{x: 0.3, y: 0.00111}, 
+{x: 0.8, y: 0.81879}, 
+{x: 1.05, y: 0.6975}, 
+{x: 1.3, y: 0.50376}, 
+{x: 1.55, y: 0.35422}, 
+{x: 1.8, y: 0.25187}, 
+{x: 2.05, y: 0.18299}, 
+{x: 2.3, y: 0.13607}, 
+{x: 2.55, y: 0.10342}, 
+{x: 2.8, y: 0.0802}, 
+{x: 3.05, y: 0.06331}, 
+{x: 3.3, y: 0.05077}, 
+{x: 3.55, y: 0.04129}, 
+{x: 3.8, y: 0.03401}, 
+{x: 4.05, y: 0.02833}, 
+{x: 4.3, y: 0.02383}, 
+{x: 4.55, y: 0.02023}, 
+{x: 4.95, y: 0.01583}],
+// weibull(1,1)
+[{x: 0.05, y: 0.95123}, 
+{x: 0.3, y: 0.74082}, 
+{x: 0.55, y: 0.57695}, 
+{x: 0.8, y: 0.44933}, 
+{x: 1.05, y: 0.34994}, 
+{x: 1.3, y: 0.27253}, 
+{x: 1.55, y: 0.21225}, 
+{x: 1.8, y: 0.1653}, 
+{x: 2.05, y: 0.12873}, 
+{x: 2.3, y: 0.10026}, 
+{x: 2.55, y: 0.07808}, 
+{x: 2.8, y: 0.06081}, 
+{x: 3.05, y: 0.04736}, 
+{x: 3.3, y: 0.03688}, 
+{x: 3.55, y: 0.02872}, 
+{x: 3.8, y: 0.02237}, 
+{x: 4.05, y: 0.01742}, 
+{x: 4.3, y: 0.01357}, 
+{x: 4.55, y: 0.01057}, 
+{x: 4.95, y: 0.00708}],
+// weibull(1,2)
+[{x: 0.05, y: 0.09975}, 
+{x: 0.3, y: 0.54836}, 
+{x: 0.55, y: 0.81287}, 
+{x: 0.8, y: 0.84367}, 
+{x: 1.05, y: 0.69728}, 
+{x: 1.3, y: 0.47975}, 
+{x: 1.55, y: 0.28052}, 
+{x: 1.8, y: 0.14099}, 
+{x: 2.05, y: 0.06133}, 
+{x: 2.3, y: 0.02319}, 
+{x: 2.55, y: 0.00765}, 
+{x: 2.8, y: 0.0022}, 
+{x: 3.05, y: 0.00056}, 
+{x: 3.3, y: 0.00012}, 
+{x: 3.55, y: 2e-05}, 
+{x: 3.8, y: 0.0}, 
+{x: 4.05, y: 0.0}, 
+{x: 4.3, y: 0.0}, 
+{x: 4.55, y: 0.0}, 
+{x: 4.95, y: 0.0}]
   ] 
   // console.log(new_y[i].length)
   line
@@ -626,11 +806,30 @@
     .attr("d", d3.line()
           .x(function(d) { 
             {
-              return new_y[i].length >17 ?  xScale_beta(d.x) : xScale(d.x) 
+              // if 20 support is (0,5)  aka xScale_f
+              // return new_y[i].length >17 ?  xScale_beta(d.x) : xScale(d.x) 
+              if (new_y[i].length === 20) {
+                return xScale_f(d.x);
+              }
+              else if (new_y[i].length >17) {
+                return xScale_beta(d.x);
+              }
+              else {
+                return xScale(d.x); 
+              }
               };
             })
           .y(function(d) { 
-            return new_y[i].length >17 ?  yScale_beta(d.y) : yScale(d.y)
+            // return new_y[i].length >17 ?  yScale_beta(d.y) : yScale(d.y)
+            if (new_y[i].length === 20) {
+              return yScale_f(d.y);
+            }
+            else if (new_y[i].length >17){
+              return yScale_beta(d.y);
+            }
+            else {
+              return yScale(d.y);
+            }
             })
           .curve(d3.curveMonotoneX)
       )
