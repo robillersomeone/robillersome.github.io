@@ -70,7 +70,7 @@
                   here the <span class="mono">shape=3</span> and <span class="mono">scale=2</span>
                 </p>
                 <p>
-                  the gamma distribution is a building block for others - let's take a look at the exponential distribution.
+                  the gamma distribution is a building block for others - let's take a look at the <strong>exponential distribution</strong>.
                 </p>
 
             </div>
@@ -105,7 +105,7 @@
                   the <span class="mono">rate</span> is equal the inverse of the <span class="mono">scale</span> in the gamma distribution.
                 </p>
                 <p>
-                  here is an exponential distribution with <span class="mono">rate=1</span>
+                  here is an <strong>exponential distribution</strong> with <span class="mono">rate=1</span>
                 </p>
             </div>
             <div>
@@ -127,7 +127,7 @@
                 that comes from adding exponentials will always be a positive whole number.
                 <br>
                 <br>
-                when that happens we call it an <strong>erlang distribution</strong>, which you can see on the right
+                when that happens we call it an <strong>erlang distribution</strong>, which you can see
                 with a <span class="mono">shape=2</span> and  <span class="mono">scale=2</span>
               </p>
             </div>
@@ -141,12 +141,12 @@
                 gamma function, the <strong>chi-squared distribution</strong> .
               </p>
               <p>
-                this one is seen in stats classes as the test for indepedence, it has one
+                this one is seen in stats classes when doing the test for indepedence to see if two or more classes are mutually exclusive, it has one
                 parameter, <span class="mono">degrees of freedom</span>. here the 
                 <span class="mono">degrees of freedom=6</span>
               </p>
               <p>
-                to make the chi-squared distribution from gamma, we set the <span class="mono">scale</span>
+                to make the chi-squared distribution from the gamma distribution, we set the <span class="mono">scale</span>
                 to two and divide the  <span class="mono">shape</span> by two.
                 <!-- the <span class="mono">shape/2</span> is equal to <span class="mono">degrees of freedom=6</span> -->
               </p>
@@ -191,7 +191,7 @@
                 here we set <span class="mono">alpha=4, beta=6</span>.
               </p>
               <p>
-                the beta distribution looks larger on the graph, because it has a different support. 
+                the beta distribution looks larger on the graph, because it has a different support (x values). 
                 it is defined from <span class="mono">[0,1]</span>, while the gamma distribution is defined from
                 <span class="mono">[0,∞]</span>, so we zoomed in a little.
               </p>
@@ -220,8 +220,8 @@
                 we get a horizontal line, which is called the <strong>uniform distribution</strong>.
               </p>
               <p> we can interpret a uniform distribution as every outcome being equally likely. 
-                because of this, we use the uniform parameterizaion of the beta distribution 
-                as a common starting point or conjugate prior in bayesian statitics.
+                because of this, we use the uniform parametrization of the beta distribution 
+                as a common starting point or conjugate prior in bayesian statistics.
               </p>
             </div>
             <div>
@@ -230,8 +230,8 @@
                 another starting point
               </h3>
               <p> 
-                the <strong> arcsin distribution</strong> is a common prior distribtuion in bayesian statistics as well.
-                it is just another specific parameterization
+                the <strong> arcsin distribution</strong> is a common prior distribution in bayesian statistics as well.
+                it is just another specific parametrization
                 of the beta distribution with <span class="mono">alpha=.5, beta=.5</span>
               </p>
             </div>
@@ -254,12 +254,12 @@
                 testing it out 
               </h3>
               <p> 
-                using two laplace distributions, we can build another distribution by dividing them. This makes a common distribution in statitical testing - the <strong>f distribution</strong>.        
+                using two laplace distributions, we can build another distribution by dividing them. This makes a common distribution in statistical testing - the <strong>f distribution</strong>.        
               </p>
               <p> 
                 the <strong>f distribution</strong> is known as a ratio distribution ~ another common way to make it is by taking the ratio of two <strong>chi-squared distributions</strong> (which are really just gamma distributions).
               </p>
-              <p>while the <strong>chi-squared distribution</strong> let's us do the test for indepedence, with the <strong>f distribution</strong> we can do analysis of variance (called ANOVA for short) and the f-test for finding the best model in a linear regression.</p> 
+              <p>while the <strong>chi-squared distribution</strong> is used in the test for indepedence, with the <strong>f distribution</strong> we can do analysis of variance (called ANOVA for short) and the f-test for finding the best model in a linear regression.</p> 
             </div>
             <div>
               <h3>
@@ -273,7 +273,7 @@
                 when looking at wind speed, the magnitude of the speed tends to follow a <strong>rayleigh distribution</strong>, and generally this distribution is helpful when looking for the magnitude of components.
               </p>
               <p> 
-                the <strong>laplace distribution</strong>, <strong>f distribution</strong>, and <strong>rayleigh distribution</strong> can all by made by subtracting, dividing, or taking a square root of a specific parameterization of the <strong>gamma distribution</strong>.
+                the <strong>laplace</strong>, <strong>f</strong>, and <strong>rayleigh distributions</strong> can all by made by subtracting, dividing, or taking a square root of a specific parameterization of the <strong>gamma distribution</strong>.
               </p>
             </div>
             <div>
@@ -286,7 +286,7 @@
               </p>
               <p>gumbel(0,1) = - log( exponential(1) )</p>
               <p> 
-                the <strong>gumbel distribution</strong> has two parameters, the <span class="mono">location</span> and <span class="mono">scale</span>.
+                the <strong>gumbel distribution</strong> has two parameters, the <span class="mono">location</span> and <span class="mono">scale</span>, here the <span class="mono">location=1</span> and <span class="mono">scale=2</span>.
               </p>
             </div>
             <div>
@@ -317,7 +317,7 @@
               </p>
               <p>weibull(scale, shape) = scale * (- ln( uniform(0,1) ) ) ^ (1 / shape)</p>
               <p> 
-                the <strong>gumbel</strong>, <strong>fréchet</strong>, and <strong>weibull distributions</strong> are all extreme value distributions used in predicting when extreme weather events (like floods) will occur.
+                here the <span class="mono">scale=1</span> and <span class="mono">shape=1</span>. the <strong>gumbel</strong>, <strong>fréchet</strong>, and <strong>weibull distributions</strong> are all extreme value distributions used in predicting when extreme weather events (like floods) will occur.
               </p>
             </div>
             <div>
