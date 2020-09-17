@@ -13,9 +13,9 @@
               "parent": "Level 2: A",
               "children": [
                 {
-                  "name": "rayleigh",
-                  "shape": "square root of exponential",
-                  "parent": "Level 3: A"
+                  "name": "pareto",
+                  "shape": "log of pareto is exponential",
+                  "parent":"Level 3: A"
                 },
                 {
                   "name": "gumbel",
@@ -32,6 +32,18 @@
             {
               "name": "chi-squared",
               "shape": "when scale=2",
+              "parent": "Level 2: A",
+              "children": [
+                {
+                  "name": "rayleigh",
+                  "shape": "square root of exponential",
+                  "parent": "Level 3: C"
+                }
+              ]
+            }, 
+            {
+              "name": "lévy",
+              "shape": "inverse gamma shape is one half",
               "parent": "Level 2: A"
             }
           ]
@@ -53,12 +65,24 @@
                     {
                       "name": "fréchet",
                       "shape": "negative log uniform",
-                      "parent": "Level 4: A"
+                      "parent": "Level 4: C"
                     },
                     {
                       "name": "weibull",
                       "shape": "negative natural log uniform",
-                      "parent": "Level 4: A"
+                      "parent": "Level 4: C"
+                    },
+                    {
+                      "name": "cauchy",
+                      "shape": "tagent of uniform",
+                      "parent": "Level 4: C",
+                      "children": [
+                        {
+                          "name": "t-distribution",
+                          "shape": "cauchy(0,1)",
+                          "parent": "Level 5: C"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -70,7 +94,7 @@
               ]
             },
             {
-              "name": "f-distribution",
+              "name": "f-distr",
               "shape": "ratio of 2 chi-squared",
               "parent": "Level 2: B"
             },
