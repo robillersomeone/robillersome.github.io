@@ -23,71 +23,10 @@
       <div><a href="../ns-the-details/">the details</a></div>
     </div>
   </header>
-<h1 id="minimal"l>another way to look at it</h1>
+<h1 id="minimal">another way to look at it</h1>
+<h2 id="minimal" class="mobile">{best to view horizontally on mobile or in a wider window}</h2>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-<script>
-  // set all of these at the same time
-  var margin = {top: 40, right: 90, bottom: 30, left: 90},
-    width = 650 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-    
-  var i = 0;
-  
-  var tree = d3.layout.tree()
-    .size([height, width]);
-  
-    var diagonal = d3.svg.diagonal()
-	  .projection(function(d) { return [d.x, d.y]; });
-
-  var svg = d3.select("body").append("svg")
-	.attr("width", width + margin.right + margin.left)
-	.attr("height", height + margin.top + margin.bottom)
-  .append("g")
-	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-d3.json("assets/data/treeData.json", function(error, treeData) {
-  root = treeData[0];
-  update(root);
-});
-
-// console.log(root)
-  function update(source) {
-  
-    var nodes = tree.nodes(root).reverse(),
-      links = tree.links(nodes);
-  
-    nodes.forEach(function(d) { d.y = d.depth * 100; });
-
-    var node = svg.selectAll("g.node")
-      .data(nodes, function(d) { return d.id || (d.id = ++i); });
-  
-    var nodeEnter = node.enter().append("g")
-      .attr("class", "node")
-      .attr("transform", function(d) { 
-        return "translate(" + d.x + "," + d.y + ")"; });
-  
-    nodeEnter.append("circle")
-      .attr("r", 2)
-      .attr("fill", "#ccc");
-  
-    nodeEnter.append("text")
-      .attr("y", function(d) { 
-        return d.children || d._children ? -18 : 18; })
-      .attr("dy", ".35em")
-      .attr("text-anchor", "middle")
-      // .text(function(d) { return (d.name + "\n"+ d.shape); })
-      .text(function(d) { return (d.name); })
-      .style("fill-opacity", 1);
-
-    var link = svg.selectAll("path.link")
-      .data(links, function(d) { return d.target.id; });
-  
-    link.enter().insert("path", "g")
-      .attr("class", "link")
-      .attr("d", diagonal);
-  }
-</script>
-
+<script src="../assets/lib/distribution_tree.js"></script>
 </body>
 <footer>
   <div id="end">

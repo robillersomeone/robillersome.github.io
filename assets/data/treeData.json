@@ -8,20 +8,58 @@
           "parent": "Top Level",
           "children": [
             {
+              "name": "inverse gamma",
+              "shape": "1/gamma",
+              "parent": "Level 2: A",
+              "children": [
+                {
+                  "name": "inverse chi-squared",
+                  "shape": "when scale=2",
+                  "parent": "Level 3: A"
+                }
+              ]
+            },
+            {
+              "name": "chi",
+              "shape": "",
+              "parent": "Level 2: A",
+              "children": [
+                {
+                  "name": "nakagami",
+                  "shape": "case of chi",
+                  "parent": "Level 3: B"
+                }
+              ]
+            },
+            {
               "name": "exponential", 
               "shape": "when shape=1",
               "parent": "Level 2: A",
               "children": [
                 {
-                  "name": "pareto",
-                  "shape": "log of pareto is exponential",
-                  "parent":"Level 3: A"
-                },
-                {
                   "name": "gumbel",
                   "shape": "negative log exponential",
                   "parent": "Level 3: A"
+                    },
+                {
+                  "name": "pareto",
+                  "shape": "log of pareto is exponential",
+                  "parent": "Level 3: A",
+                  "children":[
+                    {
+                      "name": "lomax", 
+                      "shape": "case of pareto",
+                      "parent": "Level 4: A",
+                      "children": [
+                        {
+                          "name": "burr", 
+                          "shape": "case of lomax",
+                          "parent": "Level 5: A"
+                        }
+                      ]
                     }
+                  ]
+                }
               ]
             },
             {
@@ -35,9 +73,22 @@
               "parent": "Level 2: A",
               "children": [
                 {
+                  "name": "maxwell-boltzmann",
+                  "shape": "chi-squared(3)",
+                  "parent": "Level 3: C"
+                },
+                {
                   "name": "rayleigh",
                   "shape": "square root of exponential",
-                  "parent": "Level 3: C"
+                  "parent": "Level 3: C",
+                  "children": [
+                    {
+                      "name": "rice",
+                      "shape": "rice centered at 0 is rayleigh",
+                      "parent": "Level 4: C"
+                    }
+                  ]
+
                 }
               ]
             }, 
@@ -53,10 +104,37 @@
           "parent": "Top Level",
           "children": [
             {
+              "name": "logistic",
+              "shape": "log ratio of exponentials",
+              "parent": "Level 2: B",
+              "children": [
+                {
+                  "name": "log-logistic",
+                  "shape": "more logit function"
+                }
+              ]
+            },
+            {
+              "name": "beta prime",
+              "shape": "ratios of gammas",
+              "children":[
+                {
+                  "name": "dagum",
+                  "shape": "case of beta prime"
+                }
+              ]
+            },
+            {
               "name": "beta", 
               "shape": "gamma/ sum of two gammas",
               "parent": "Level 2: B",
               "children": [
+                
+                {
+                  "name": "kumaraswamy",
+                  "shape": "beta(1, b) or beta(a, 1) ",
+                  "parent": "Level 3: D"
+                },
                 {
                   "name": "uniform",
                   "shape": "beta(1,1)",
@@ -68,21 +146,43 @@
                       "parent": "Level 4: C"
                     },
                     {
-                      "name": "weibull",
-                      "shape": "negative natural log uniform",
-                      "parent": "Level 4: C"
-                    },
-                    {
                       "name": "cauchy",
                       "shape": "tagent of uniform",
                       "parent": "Level 4: C",
                       "children": [
                         {
+                          "name": "log-cauchy",
+                          "shape": "log of cauchy"
+                        },
+                        {
                           "name": "t-distribution",
                           "shape": "cauchy(0,1)",
-                          "parent": "Level 5: C"
+                          "parent": "Level 5: C",
+                          "children": [
+                            {
+                              "name": "normal",
+                              "shape": "t goes normal",
+                              "children": [
+                                {
+                                  "name": "log-normal",
+                                  "shape": "log of normal",
+                                  "parent" :"shoe"
+                                },
+                                {
+                                  "name": "logit-normal",
+                                  "shape": "more logit function",
+                                  "parent" :"shoe"
+                                }
+                              ]
+                            }
+                          ]
                         }
                       ]
+                    },
+                    {
+                      "name": "weibull",
+                      "shape": "negative natural log uniform",
+                      "parent": "Level 4: C"
                     }
                   ]
                 },
@@ -94,14 +194,21 @@
               ]
             },
             {
-              "name": "f-distr",
-              "shape": "ratio of 2 chi-squared",
-              "parent": "Level 2: B"
-            },
-            {
               "name": "laplace",
               "shape": "double exponential",
               "parent": "Level 2: B"
+            },
+            {
+              "name": "f-distr",
+              "shape": "ratio of 2 chi-squared",
+              "parent": "Level 2: B",
+              "children": [
+                {
+                  "name": "fisher's z",
+                  "shape" : "log of f divided by 2",
+                  "parent":"Level 2: B"
+                }
+              ]
             }
           ]
         }
