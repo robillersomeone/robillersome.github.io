@@ -8,12 +8,17 @@
           "parent": "Top Level",
           "children": [
             {
-              "name": "inverse gamma",
+              "name": "inverse-gamma",
               "shape": "1/gamma",
               "parent": "Level 2: A",
               "children": [
                 {
-                  "name": "inverse chi-squared",
+                  "name": "lévy",
+                  "shape": "inverse gamma shape is one half",
+                  "parent": "Level 2: A"
+                },
+                {
+                  "name": "inverse-chi-squared",
                   "shape": "when scale=2",
                   "parent": "Level 3: A"
                 }
@@ -91,11 +96,6 @@
 
                 }
               ]
-            }, 
-            {
-              "name": "lévy",
-              "shape": "inverse gamma shape is one half",
-              "parent": "Level 2: A"
             }
           ]
         },

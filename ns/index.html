@@ -212,7 +212,7 @@
             </div>
             <div>
               <h3>
-                <!-- eleventh paragraph - beta(1,1) -->
+                <!-- eleventh paragraph - uniform beta(1,1) -->
                 starting from scratch
               </h3>
               <p> 
@@ -237,8 +237,22 @@
             </div>
             <div>
               <h3>
-                <!-- thirteenth paragraph - laplace(0,1) -->
-                making a point
+                <!-- thirteenth paragraph - kumaraswamy(5,1) -->
+                almost beta
+              </h3>
+              <p> 
+                the <strong> kumaraswamy distribution</strong> is very similar to the beta distribution with two shape parameters,
+                but is more simple to make and doesen't use the beta function to make the pdf.
+              </p>
+              <p>
+                also, another way to think about the <strong>uniform distribution</strong> is a as <strong> kumaraswamy distribution</strong> with <span class="mono">alpha=1, beta=1</span>
+                , here we set <span class="mono">alpha=5, beta=1</span>
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- fourteenth paragraph - laplace(0,1) -->
+                going all over laplace
               </h3>
               <p> 
                  if we divide two standard uniform distributions both with parameters <span class="mono">alpha=0, beta=1</span> and then take the log, we get the <strong>laplace distribution</strong>.
@@ -250,20 +264,44 @@
             </div>
             <div>
               <h3>
-                <!-- fourteenth paragraph - f(2,2) -->
+                <!-- fifteenth paragraph - f(2,2) -->
                 testing it out 
               </h3>
               <p> 
                 using two laplace distributions, we can build another distribution by dividing them. This makes a common distribution in statistical testing - the <strong>f distribution</strong>.        
               </p>
               <p> 
-                the <strong>f distribution</strong> is known as a ratio distribution ~ another common way to make it is by taking the ratio of two <strong>chi-squared distributions</strong> (which are really just gamma distributions). it has two parameters, which are both <span class="mono">degrees of freedom</span>, here both are <span class="mono">degrees of freedom=2</span>
+                the <strong>f distribution</strong> is known as a ratio distribution ~ another common way to make it is by taking the ratio of two <strong>chi-squared distributions</strong> (which are really just gamma distributions). 
+                it has two parameters, which are both <span class="mono">degrees of freedom</span>, here both are <span class="mono">degrees of freedom=2</span>
               </p>
-              <p>while the <strong>chi-squared distribution</strong> is used in the test for indepedence, with the <strong>f distribution</strong> we can do analysis of variance (called ANOVA for short) and the f-test for finding the best model in a linear regression.</p> 
+              <p>while the <strong>chi-squared distribution</strong> is used in the test for indepedence, with the <strong>f distribution</strong> 
+                we can do analysis of variance (called ANOVA for short) and the f-test for finding the best model in a linear regression.
+              </p> 
             </div>
             <div>
               <h3>
-                <!-- fifteenth paragraph - rayleigh(1) -->
+                <!-- sixteenth paragraph - z(5,2) -->
+                test number 2
+              </h3>
+              <p> 
+                taking the log of the <strong>f distribution</strong> and dividing it by 2 we can make the <strong>fisher's z distribution</strong>.        
+                the <strong>fisher's z distribution</strong>, also has two parameters like the 
+                f distribution, <span class="mono">degrees of freedom</span>, known as <span class="mono">degree 1</span> and <span class="mono">degree 2</span>. 
+               
+              </p>
+              <p>
+                <strong>fisher's z</strong> (degree 1, degree 2) = log ( <strong>f</strong> (degree 1, degree 2) ) / 2
+              </p>
+              <p> 
+                here <span class="mono">degree 1=5, degree 1=2</span>. an important note - this distribution is not used in a z-test,
+                for those we use a normal distribution, which is just around the corner.
+              </p>
+          
+            </div>
+            
+            <div>
+              <h3>
+                <!-- seventeenth paragraph - rayleigh(1) -->
                 raylly?
               </h3>
               <p> 
@@ -273,62 +311,420 @@
                 when looking at wind speed, the magnitude of the speed tends to follow a <strong>rayleigh distribution</strong>, and generally this distribution is helpful when looking for the magnitude of components.
               </p>
               <p> 
-                the <strong>laplace</strong>, <strong>f</strong>, and <strong>rayleigh distributions</strong> can all by made by subtracting, dividing, or taking a square root of a specific parameterization of the <strong>gamma distribution</strong>.
+                the <strong>laplace</strong>, <strong>f</strong>, <strong>fisher's z</strong>, and <strong>rayleigh distributions</strong> can all by made by subtracting, dividing, or taking a square root of a specific parameterization of the <strong>gamma distribution</strong>.
               </p>
             </div>
             <div>
               <h3>
-                <!-- sixteenth paragraph - gumbel(1,2) -->
+                <!-- eighteenth paragraph - generalized normal distribution(2.5,1, 4)??? -->
+                generally speaking
+              </h3>
+              <p>
+                the laplace distribution we made earlier is a case of the <strong>generalied normal distribution</strong>,
+                which has three parameters, <span class="mono">location, scale,</span> and <span class="mono">shape</span>
+              </p>
+              <p>
+                here the <span class="mono">location=2.5, scale=1,</span> and <span class="mono">shape=4</span>
+              </p>
+              <p>      
+                we call the laplace distribution we made earlier is a parameterization of the <strong>generalied normal distribution</strong>
+                when  the <span class="mono">shape=1</span>, 
+                along with laplace the normal distribution is another parameterization of the <strong>generalied normal distribution</strong> 
+                when  the <span class="mono">shape=2</span>,
+                but before we get there let's talk transformations and sampling.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- seventeenth paragraph -  cauchy(2.5,2) -->
+                <!-- another uniform transformation -->
+                uniform transformed
+              </h3>
+              <p>
+                if we take a fourier transform of laplace we get a cauchy distribution, 
+                we can also make the <strong>cauchy distribution</strong> from transforming a uniform distribution.
+              </p>
+              <p> 
+                cauchy(0,1) = tan( π (uniform - .5) )
+              </p>
+              <p>
+                the parameters of for the <strong>cauchy distribution</strong> are <span class="mono">location</span> 
+                and <span class="mono">scale</span>, here the <span class="mono">location=0 scale=2</span>.
+                the tails of the <strong>cauchy distribution</strong> are larger than the <strong>normal distribution</strong>.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- eighteenth paragraph -  t(1) -->
+                taking a sample
+              </h3>
+              <p>
+                setting <strong>cauchy(0,1)</strong> gets us to another popular distribution in statistical testing, 
+                the <strong>t-distribution</strong> with one parameter <span class="mono">degrees of freedom</span>.
+              </p>
+              <p> 
+                the <strong>t-distribution</strong> comes from sampling a normal distribution, 
+                so as the <span class="mono">degrees of freedom</span> increase the curve becomes taller, the tails 
+                become smaller, and we approach the normal distribution. 
+                               
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- nineteenth paragraph -  generalized normal distribution(2.5?,1,2) -->
+                finally normal
+              </h3>
+              <p>
+                <!-- as we increase the degrees of freedoms in the t distribution we approach the  -->
+                the <strong>t-distribution</strong> is sampled from the <strong>normal distribution</strong>,
+                 which is a parameterization of the <strong>generalized normal distribution</strong> with the <span class="mono">shape=2</span>,
+                so we just have two parameters <span class="mono">location</span> and <span class="mono">scale</span>.
+              </p>
+              <p> 
+              by changing the <span class="mono">location</span> parameter (moving the peak of the graph left or right) 
+              we can make more parametrizations of the <strong>normal distribution</strong> with one special one to remember
+               - the <strong>standard normal distribution</strong>,
+              this is only when <span class="mono">location=0</span>
+              and <span class="mono">scale=1</span>
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twentieth paragraph -  chi(2) -->
+                only positive
+              </h3>
+              <p>
+                the <strong>chi distribution</strong> is the absolute value of the <strong>standard normal distribution</strong>, 
+                its also the square root of the <strong>chi-squared distribution</strong>.
+                like the <strong>chi-squared distribution</strong> the <strong>chi distribution</strong> has one parameter 
+                <span class="mono">degrees of freedom</span>, here <span class="mono">degrees of freedom=2</span>
+              </p>
+              <p> 
+                while the <strong>chi-squared distribution</strong> is a parametrization of the <strong>gamma distribution</strong>
+                is is also the sum of squared <strong>normal distributions</strong>, the <strong>chi distribution</strong> 
+                is the square root of that sum.
+              </p>
+              <!-- <p>the chi-squared happens a lot? idk... add more here </p> -->
+            </div>
+            <div>
+              <h3>
+                <!-- twenty first paragraph -  nakagami(1,3) -->
+                chi-scaled
+              </h3>
+              <p>
+                the <strong>nakagami distribution</strong>  is a scaled version of a specific parameterization of the chi distribution,
+                that has two parameters <span class="mono">shape</span> and <span class="mono">spread</span>, 
+                here <span class="mono">shape=1, spread=3</span>
+                
+              </p>
+              <p> 
+                the <strong>nakagami distribution</strong> is also the square root of 
+                the <strong>gamma distribution</strong> where <span class="mono">scale</span> of the gamma is equal to the 
+                <span class="mono">shape/spread</span>  of the <strong>nakagami distribution</strong>.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twenty second paragraph -  maxwell-boltzmann(2) -->
+                particles-of-chi
+              </h3>
+              <p>
+                an application of the <strong>chi distribution</strong> is the <strong>maxwell-boltzmann distribution</strong>,
+                which models the distribution of the speed of particles in a gas at a given temperature.
+                <!-- to get from the chi distribution to the chi-squared distribution we square it.  -->
+                <!-- to get another chi, we are going to squared it, then take the inverse. -->
+              </p>
+              <p> 
+                the <strong>maxwell-boltzmann distribution</strong> is a transformation of a <strong>chi distribution</strong> with 
+                <span class="mono">degrees of freedom=3</span>. it has one parameter <span class="mono">scale</span>, 
+                which can be applied in modeling the temperature of a gas. as the <span class="mono">scale</span> increases the gas is hotter 
+                and the curve flattens, here the <span class="mono">scale=2</span>, so not that hot.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twenty second paragraph -  inverse chi-squared(4) -->
+                inverted-chi
+              </h3>
+              <p>
+                to get another distribution in the chi-squared family, we are just going to invert it. this will make the
+                <strong>inverse-chi-squared distribution</strong>, 
+                like the other chi-squared it has one parameter, <span class="mono">degrees of freedom</span>, 
+                right now the <span class="mono">degrees of freedom=4</span>.
+              </p>
+              <p> 
+                this distribution is common in bayesian inference, when we don't know the variance of of a normal distribution.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twenty third paragraph -  inverse gamma(2,1) -->
+                back to gamma
+              </h3>
+              <p>
+                just as the chi-squared distribution is a parameterization of the gamma, 
+                the <strong>inverse-chi-squared</strong> is a parameterization
+                of the <strong>inverse-gamma distribution</strong>. 
+              </p>
+              <p> 
+                here we have an <strong>inverse-gamma distribution</strong> with <span class="mono">shape=2</span>
+                and the <span class="mono">scale=1</span>.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twenty fourth paragraph -  levy(0,1) -->
+                another gamma 
+              </h3>
+              <p>
+                the <strong>lévy distribution</strong> has two parameters <span class="mono">location</span> and <span class="mono">scale</span>. 
+                
+                if the <span class="mono">location=0</span> it is also a parameterization of the <strong>inverse-gamma distribution</strong> 
+                with the <span class="mono">shape=.5</span>, this graph is with parameters <span class="mono">location=1, scale=1</span>.
+              </p>
+              <p>   
+                the <strong>lévy distribution</strong> has been shown to closely model the frequency of geomagnetic reversals 
+                - when magnetic north and south swap places.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twenty fifth paragraph -  pareto(1,3) -->
+                exponentially important
+              </h3>
+              <p>
+                the 80-20 rule comes from the <strong>pareto distribution</strong>, 
+                which is the <strong>exponential distribution</strong> raise it to the exponential function.
+                
+              </p>
+              <p>pareto(scale, shape)= scale * <var>e <sup>exponential(rate)</sup></var></p>
+              <p> 
+                <strong>pareto distribution</strong> has two parameters - <span class="mono">scale</span> 
+                and <span class="mono">shape</span>. the <span class="mono">scale</span> is also known as the minimum
+                x value, here the <span class="mono">scale=1</span>, so the x-value on the left side of the graph is 1.
+                the <span class="mono">shape</span> is known as the pareto index, here <span class="mono">shape=3</span>,
+                which is the starting value on the y-axis.
+              </p>
+              <p>
+                the <strong>pareto distribution</strong> is also a continuous version of the <strong>zeta distribution</strong>
+                used in <strong>zipf's law</strong>, which is worth a google.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twenty sixth paragraph -  lomax(1,2) -->
+                not as important...
+              </h3>
+              <p>
+                 the <strong>lomax distribution</strong> is a subset of the <strong>pareto distribution</strong> and not as famous.
+                 like the <strong>pareto distribution</strong> it is used in economics as well as modeling internet traffic.
+                 it has two parameters - <span class="mono">scale=2</span>, and <span class="mono">shape=1</span> here.
+              </p>
+              <p> 
+                the <strong>lomax distribution</strong> is also equal to the <strong>f distribution</strong>
+                in a specific case. 
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twenty seventh paragraph -  burr(1,1) -->
+                part of the family
+              </h3>
+              <p>
+                the <strong>burr distribution</strong> is another distribution used in economics, 
+                and is a case of the <strong>lomax distribution</strong> 
+                with two paramters <span class="mono">c</span> and <span class="mono">k</span>.
+              </p>
+              <p> 
+                when <span class="mono">c=1</span> the <strong>burr distribution</strong> is the 
+                <strong>lomax distribution</strong>. here <span class="mono">c=1</span> 
+                and <span class="mono">c=2</span>, so this graph is very similar to the one we made with
+                above. 
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twenty eighth paragraph -  logistic(2,1) -->
+                <!-- maybe do 1,1 to talk about logit normal after -->
+                logistically
+              </h3>
+              <p>
+                going from the pareto family of distributions made from the log of <strong>one exponential</strong> 
+                to the log of the <strong>ratio of exponentials</strong> creates the <strong>logistic distribution</strong>.
+              </p>
+              <p>
+                the <strong>logistic distribution</strong> has two paramters
+                <span class="mono">location</span> and <span class="mono">scale</span>, we set
+                <span class="mono">location=2</span> and <span class="mono">scale=1</span> for this graph.
+              </p>
+              <p> 
+                the logstic function that is used to make this distribution shows up everywhere 
+                in machine learning. here is what the standard logistic function looks like
+              </p>
+              <p>
+                logistic function = 1 / ( 1 + <var>e <sup>-x</sup></var> )
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- twenty ninth paragraph -  logit-normal(1,1) -->
+                logit again 
+              </h3>
+              <p>
+                if we apply the logistic function we made above to the <strong>normal distribution</strong> we can make 
+                the <strong>logit-normal distribution</strong>, with <span class="mono">location=1</span> and
+                <span class="mono">scale=1</span> parameters.
+              </p>
+              <p> 
+                the <strong>logit-normal distribution</strong> can be used in place of the 
+                <strong>dirichlet distribution</strong>, because it's a little more simple to make.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- thirty paragraph -  beta prime(2,3) -->
+                prime ratios
+              </h3>
+              <p>
+                we made the <strong>logistic distribution</strong> by taking the 
+                ratio of <strong>exponential distributions</strong>, 
+                if we take the ratio of two <strong>gamma distributions</strong> with the
+                <span class="mono">scale=1</span> we get the <strong>beta prime distribution</strong>.
+              </p>
+              <p> 
+                the two <span class="mono">shape</span> parameters from the <strong>gamma distributions</strong>
+                are equal to the two parameters of the <strong>beta prime distribution</strong>, here they are 
+                <span class="mono">shape=2</span> and <span class="mono">shape=3</span>.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- thirty first paragraph -  dagum(1,3,1) -->
+                special primes
+              </h3>
+              <p>
+                a special case of the <strong>beta prime distribution</strong> is the <strong>dagum distribution</strong>,
+                which has 3 parameters, two for <span class="mono">shape</span> and one for <span class="mono">scale</span>.
+              </p>
+              <p> 
+                here <span class="mono">shape=1, shape=3</span>, and <span class="mono">scale=1</span>
+                the <strong>dagum distribution</strong> is used in economics and is also related to the 
+                gini index.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- thirty second paragraph - log logistic(1,2) -->
+                logs of logs
+              </h3>
+              <p>
+                by setting the first <span class="mono">shape</span> parameter of the <strong>dagum distribution</strong>
+                to 1, we can make the, 
+                 <strong>log-logistic distribution</strong> with two parameters, <span class="mono">scale</span> and <span class="mono">shape</span>
+              </p>
+              <p> 
+                this the first of three <strong>log distributions</strong> we will talk about. we can make these by taking a distribution we know and raise it to the exponential function. 
+                so to make the <strong>log-logistic distribution</strong> we raise <strong>logistic distribution</strong> to the exponential function.
+                <!-- normally written as exp() -->
+              </p>
+              <p>
+                log-logistic(scale, shape)=<var>e<sup>logistic(location, scale)</sup></var>
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- thirty third paragraph -  log normal(0,1) -->
+                pretty normal
+              </h3>
+              <p>
+                the <strong>log-normal distribution</strong> has two parameters <span class="mono">location</span> and <span class="mono">scale</span>,
+                its used everywhere in engineering and economics. 
+              </p>
+              <p> 
+                to get back to the <strong>normal distribution</strong> from the <strong>log-normal distribution</strong>
+                we take the natural log of the <strong>log-normal distribution</strong>, basically undoing the logs.           
+              </p>
+              <p>
+                <strong>normal</strong>(location, scale) = ln( <strong>log-normal</strong>(location, scale) )
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- thirty fourth paragraph - log cauchy(0,1) -->
+                logs of them
+              </h3>
+              <p>
+                taking the exponential function of the <strong>cauchy distribution</strong> gets us to the last
+                distribution we will talk about with a log in the name, the <strong>log-cauchy distribution</strong>.
+                like the <strong>cauchy distribution</strong> it has two parameters - <span class="mono">location</span> and <span class="mono">scale</span>.
+              </p>
+              <p> 
+                <strong>log-cauchy distribution</strong> is a heavy tail distribution, mainly cause it is logarithmically decaying. 
+              </p>
+            </div>
+            <div>
+              <h3>
+                <!-- thirty fifth paragraph - gumbel(1,2) -->
                 getting extreme
               </h3>
               <p> 
                  the next three distribution we are going to make by taking the negative log (or natural log) of a distribution we have already seen. if we take the negative log of the  <strong>exponential distribution</strong> with the <span class="mono">rate=1</span> we get the <strong>gumbel distribution</strong>.
               </p>
-              <p>gumbel(0,1) = - log( exponential(1) )</p>
+              <p>gumbel(location, 1) = - log( exponential(1) )</p>
               <p> 
                 the <strong>gumbel distribution</strong> has two parameters, the <span class="mono">location</span> and <span class="mono">scale</span>, here the <span class="mono">location=1</span> and <span class="mono">scale=2</span>.
               </p>
             </div>
             <div>
               <h3>
-                <!-- seventeenth paragraph - fréchet(2,1,0)-->
+                <!-- thirty sixth paragraph - fréchet(2,1,0)-->
                 from the uniform
               </h3>
               <p> 
                 the <strong>fréchet distribution</strong> is built from taking the negative log of the <strong>uniform distribution</strong> and has three parameters <span class="mono">shape</span>, <span class="mono">scale</span> and <span class="mono">location of minimum</span>.
               </p>
-              <p>fréchet(shape, scale, location) = location + scale * (- log( uniform(0,1) ) ) ^ ( -1 / shape)</p>
+              <p>
+                fréchet(shape, scale, location) = location + scale * <var>(- log ( uniform(0,1) ) ) <sup>(1 / shape)</sup></var>
+              </p>
               <p> 
                 the formula looks more complicated than the gumbel, but we normally set the <span class="mono">scale=1</span> and <span class="mono">location of minimum=0</span>, so the formula ends up being... 
               </p>
-              <p>fréchet(shape, scale, location) = 1 / (- log( uniform(0,1) ) )</p>
+              <p>
+                fréchet(shape, scale, location) = <var>(- log ( uniform(0,1) ) ) <sup>(1 / shape)</sup></var>
+              </p>
               <p> 
                 or just 1 divided by the negative log of the <strong>uniform distribution</strong>, here <span class="mono">shape=2</span>, <span class="mono">scale=1</span> and <span class="mono">location of minimum=0</span>
               </p>
             </div>
             <div>
               <h3>
-                <!-- eighteenth paragraph - weibull(1,1) -->
+                <!-- thirty seventh paragraph - weibull(1,1) -->
                 the last log
               </h3>
               <p> 
                  the last distribution we will build is with the negative natural log and is called the <strong>weibull distribution</strong>. it is very similar to the <strong>fréchet distribution</strong>, but only has two parameters <span class="mono">scale</span> and <span class="mono">shape</span>.
   
               </p>
-              <p>weibull(scale, shape) = scale * (- ln( uniform(0,1) ) ) ^ (1 / shape)</p>
+              <p>
+                weibull(scale, shape) = scale * <var>(- ln ( uniform(0,1) ) ) <sup>(1 / shape)</sup></var>
+              </p>
               <p> 
                 here the <span class="mono">scale=1</span> and <span class="mono">shape=1</span>. the <strong>gumbel</strong>, <strong>fréchet</strong>, and <strong>weibull distributions</strong> are all extreme value distributions used in predicting when extreme weather events (like floods) will occur.
               </p>
-            </div>
+            </div>  
             <div>
               <h3>
-                <!-- nineteenth paragraph -  place holder - weibull(1,2) -->
+                <!-- thirty eighth paragraph -  none -->
+                <!-- placeholder -->
                 ...
               </h3>
-              <p> 
-                <!-- after this? -->                
+              <p>
+                <!-- -->
               </p>
-            </div>
+              <p> 
+                <!-- -->                
+              </p>
+            </div>        
         </div>
     </div>
     
@@ -346,13 +742,10 @@
     var width = height = d3.select('#graph').node().offsetWidth
     var r = 30
 
-
     if (innerWidth <= 925){
       width = innerWidth
       height = innerHeight*.7
     }
-
-  // console.log(width, height)
 
   //  select the graph tag for the svg element
   var svg = d3.select('#graph').html('')
@@ -408,7 +801,10 @@
   // colors for each new div in the class='sections' div
   // take out first blue, probably no green
   var colors = ["#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black', "#296b0f", 'steelblue', '#6776d1',
-                "#C86753", "#C86753", 'steelblue', '#6776d1', "#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black']
+                "#C86753", "#C86753", 'steelblue', '#6776d1', "#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black',
+                "#C86753", "#C86753", 'steelblue', '#6776d1', "#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black',
+                "#C86753", "#C86753", 'steelblue', '#6776d1', "#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black',
+                "#C86753", "#C86753", 'steelblue']
 
   // for the line //
   var gs = d3.graphScroll()
@@ -447,358 +843,8 @@
 
   // gamma 1,2 - gamma 2,2 - gamma 3,2 -gamma 1,2 - expo 1 - erlang 2,2 - chi 6 - chi 8 - 
   // beta 4,6 - beta 3,2 - beta 1,1 - beta .5,.5 - beta .5,.5
-  var new_y = [
-  [{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
-  {x : 1.300000000000000044e+00, y : 2.610199999999999743e-01},
-  {x : 2.549999999999999822e+00, y : 1.397200000000000109e-01},
-  {x : 3.799999999999999822e+00, y : 7.477999999999999925e-02},
-  {x : 5.049999999999999822e+00, y : 4.003000000000000308e-02},
-  {x : 6.299999999999999822e+00, y : 2.143000000000000113e-02},
-  {x : 7.549999999999999822e+00, y : 1.146999999999999929e-02},
-  {x : 8.800000000000000711e+00, y : 6.139999999999999625e-03},
-  {x : 1.005000000000000071e+01, y : 3.289999999999999956e-03},
-  {x : 1.130000000000000071e+01, y : 1.760000000000000063e-03},
-  {x : 1.255000000000000071e+01, y : 9.399999999999999719e-04},
-  {x : 1.380000000000000071e+01, y : 5.000000000000000104e-04},
-  {x : 1.505000000000000071e+01, y : 2.700000000000000035e-04},
-  {x : 1.630000000000000071e+01, y : 1.399999999999999877e-04},
-  {x : 1.755000000000000071e+01, y : 8.000000000000000654e-05},
-  {x : 1.955000000000000071e+01, y : 3.000000000000000076e-05}],
+  d3.json("../assets/data/distributions.json", function(error, new_y) {
 
-  [{x : 5.000000000000000278e-02, y : 1.218999999999999945e-02},
-  {x : 1.300000000000000044e+00, y : 1.696600000000000052e-01},
-  {x : 2.549999999999999822e+00, y : 1.781399999999999928e-01},
-  {x : 3.799999999999999822e+00, y : 1.420899999999999941e-01},
-  {x : 5.049999999999999822e+00, y : 1.010699999999999932e-01},
-  {x : 6.299999999999999822e+00, y : 6.748999999999999444e-02},
-  {x : 7.549999999999999822e+00, y : 4.329000000000000209e-02},
-  {x : 8.800000000000000711e+00, y : 2.700999999999999929e-02},
-  {x : 1.005000000000000071e+01, y : 1.651000000000000037e-02},
-  {x : 1.130000000000000071e+01, y : 9.939999999999999183e-03},
-  {x : 1.255000000000000071e+01, y : 5.910000000000000323e-03},
-  {x : 1.380000000000000071e+01, y : 3.480000000000000020e-03},
-  {x : 1.505000000000000071e+01, y : 2.030000000000000120e-03},
-  {x : 1.630000000000000071e+01, y : 1.180000000000000059e-03},
-  {x : 1.755000000000000071e+01, y : 6.800000000000000488e-04},
-  {x : 1.955000000000000071e+01, y : 2.799999999999999755e-04}], 
-
-  [{x : 5.000000000000000278e-02, y : 1.499999999999999869e-04},
-  {x : 1.300000000000000044e+00, y : 5.514000000000000151e-02},
-  {x : 2.549999999999999822e+00, y : 1.135599999999999943e-01},
-  {x : 3.799999999999999822e+00, y : 1.349899999999999989e-01},
-  {x : 5.049999999999999822e+00, y : 1.276100000000000012e-01},
-  {x : 6.299999999999999822e+00, y : 1.063000000000000056e-01},
-  {x : 7.549999999999999822e+00, y : 8.172000000000000097e-02},
-  {x : 8.800000000000000711e+00, y : 5.942000000000000060e-02},
-  {x : 1.005000000000000071e+01, y : 4.148000000000000298e-02},
-  {x : 1.130000000000000071e+01, y : 2.807000000000000120e-02},
-  {x : 1.255000000000000071e+01, y : 1.853000000000000133e-02},
-  {x : 1.380000000000000071e+01, y : 1.200000000000000025e-02},
-  {x : 1.505000000000000071e+01, y : 7.640000000000000090e-03},
-  {x : 1.630000000000000071e+01, y : 4.789999999999999987e-03},
-  {x : 1.755000000000000071e+01, y : 2.980000000000000010e-03},
-  {x : 1.955000000000000071e+01, y : 1.360000000000000098e-03}],
-
-  [{x : 5.000000000000000278e-02, y : 4.876499999999999724e-01},
-  {x : 1.300000000000000044e+00, y : 2.610199999999999743e-01},
-  {x : 2.549999999999999822e+00, y : 1.397200000000000109e-01},
-  {x : 3.799999999999999822e+00, y : 7.477999999999999925e-02},
-  {x : 5.049999999999999822e+00, y : 4.003000000000000308e-02},
-  {x : 6.299999999999999822e+00, y : 2.143000000000000113e-02},
-  {x : 7.549999999999999822e+00, y : 1.146999999999999929e-02},
-  {x : 8.800000000000000711e+00, y : 6.139999999999999625e-03},
-  {x : 1.005000000000000071e+01, y : 3.289999999999999956e-03},
-  {x : 1.130000000000000071e+01, y : 1.760000000000000063e-03},
-  {x : 1.255000000000000071e+01, y : 9.399999999999999719e-04},
-  {x : 1.380000000000000071e+01, y : 5.000000000000000104e-04},
-  {x : 1.505000000000000071e+01, y : 2.700000000000000035e-04},
-  {x : 1.630000000000000071e+01, y : 1.399999999999999877e-04},
-  {x : 1.755000000000000071e+01, y : 8.000000000000000654e-05},
-  {x : 1.955000000000000071e+01, y : 3.000000000000000076e-05}],
-
-  [{x: 0.05, y: 0.95123},
- {x: 1.3, y: 0.27253},
- {x: 2.55, y: 0.07808},
- {x: 3.8, y: 0.02237},
- {x: 5.05, y: 0.00641},
- {x: 6.3, y: 0.00184},
- {x: 7.55, y: 0.00053},
- {x: 8.8, y: 0.00015},
- {x: 10.05, y: 4e-05},
- {x: 11.3, y: 1e-05},
- {x: 12.55, y: 0.0},
- {x: 13.8, y: 0.0},
- {x: 15.05, y: 0.0},
- {x: 16.3, y: 0.0},
- {x: 17.55, y: 0.0},
- {x: 19.55, y: 0.0}],
-
- [{x: 0.05, y: 0.01219},
- {x: 1.3, y: 0.16966},
- {x: 2.55, y: 0.17814},
- {x: 3.8, y: 0.14209},
- {x: 5.05, y: 0.10107},
- {x: 6.3, y: 0.06749},
- {x: 7.55, y: 0.04329},
- {x: 8.8, y: 0.02701},
- {x: 10.05, y: 0.01651},
- {x: 11.3, y: 0.00994},
- {x: 12.55, y: 0.00591},
- {x: 13.8, y: 0.00348},
- {x: 15.05, y: 0.00203},
- {x: 16.3, y: 0.00118},
- {x: 17.55, y: 0.00068},
- {x: 19.55, y: 0.00028}],
-
- [{x: 0.05, y: 0.00015},
- {x: 1.3, y: 0.05514},
- {x: 2.55, y: 0.11356},
- {x: 3.8, y: 0.13499},
- {x: 5.05, y: 0.12761},
- {x: 6.3, y: 0.1063},
- {x: 7.55, y: 0.08172},
- {x: 8.8, y: 0.05942},
- {x: 10.05, y: 0.04148},
- {x: 11.3, y: 0.02807},
- {x: 12.55, y: 0.01853},
- {x: 13.8, y: 0.012},
- {x: 15.05, y: 0.00764},
- {x: 16.3, y: 0.00479},
- {x: 17.55, y: 0.00298},
- {x: 19.55, y: 0.00136}],
-
- [{x: 0.05, y: 0.0},
- {x: 1.3, y: 0.01195},
- {x: 2.55, y: 0.04826},
- {x: 3.8, y: 0.08549},
- {x: 5.05, y: 0.1074},
- {x: 6.3, y: 0.11162},
- {x: 7.55, y: 0.10283},
- {x: 8.8, y: 0.08715},
- {x: 10.05, y: 0.06949},
- {x: 11.3, y: 0.05287},
- {x: 12.55, y: 0.03877},
- {x: 13.8, y: 0.02759},
- {x: 15.05, y: 0.01915},
- {x: 16.3, y: 0.01303},
- {x: 17.55, y: 0.0087},
- {x: 19.55, y: 0.00443}],
-
- [{x: 0.01, y: 0.00048}, 
- {x: 0.06, y: 0.0799}, 
- {x: 0.11, y: 0.37459}, 
- {x: 0.16, y: 0.86335}, 
- {x: 0.21, y: 1.43623}, 
- {x: 0.26, y: 1.96566}, 
- {x: 0.31, y: 2.34834}, 
- {x: 0.36, y: 2.52486}, 
- {x: 0.41, y: 2.48337}, 
- {x: 0.46, y: 2.25254}, 
- {x: 0.51, y: 1.88852}, 
- {x: 0.56, y: 1.45968}, 
- {x: 0.61, y: 1.03215}, 
- {x: 0.66, y: 0.65835}, 
- {x: 0.71, y: 0.36999}, 
- {x: 0.81, y: 0.06632}, 
- {x: 0.91, y: 0.00224}, 
- {x: 0.99, y: 0.0}],
-
- [{x: 0.01, y: 0.00119}, 
- {x: 0.06, y: 0.04061}, 
- {x: 0.11, y: 0.12923}, 
- {x: 0.16, y: 0.25805}, 
- {x: 0.21, y: 0.41807}, 
- {x: 0.26, y: 0.60029}, 
- {x: 0.31, y: 0.79571}, 
- {x: 0.36, y: 0.99533}, 
- {x: 0.41, y: 1.19015}, 
- {x: 0.46, y: 1.37117}, 
- {x: 0.51, y: 1.52939}, 
- {x: 0.56, y: 1.65581}, 
- {x: 0.61, y: 1.74143}, 
- {x: 0.66, y: 1.77725}, 
- {x: 0.71, y: 1.75427}, 
- {x: 0.76, y: 1.66349}, 
- {x: 0.86, y: 1.24253}, 
- {x: 0.99, y: 0.11761}],
-
- [{x: 0.01, y: 1.0},
-{x: 0.06, y: 1.0}, 
-{x: 0.11, y: 1.0}, 
-{x: 0.16, y: 1.0}, 
-{x: 0.21, y: 1.0}, 
-{x: 0.26, y: 1.0}, 
-{x: 0.31, y: 1.0}, 
-{x: 0.36, y: 1.0}, 
-{x: 0.41, y: 1.0}, 
-{x: 0.46, y: 1.0}, 
-{x: 0.51, y: 1.0}, 
-{x: 0.56, y: 1.0}, 
-{x: 0.61, y: 1.0}, 
-{x: 0.66, y: 1.0}, 
-{x: 0.71, y: 1.0}, 
-{x: 0.76, y: 1.0}, 
-{x: 0.86, y: 1.0}, 
-{x: 0.99, y: 1.0}],
-
- [{x: 0.01, y: 3.19913}, 
- {x: 0.06, y: 1.34033}, 
- {x: 0.11, y: 1.01732}, 
- {x: 0.16, y: 0.86826}, 
- {x: 0.21, y: 0.7815}, 
- {x: 0.26, y: 0.72568}, 
- {x: 0.31, y: 0.68825}, 
- {x: 0.36, y: 0.66315}, 
- {x: 0.41, y: 0.64719}, 
- {x: 0.46, y: 0.63867}, 
- {x: 0.51, y: 0.63675}, 
- {x: 0.56, y: 0.64125}, 
- {x: 0.61, y: 0.65261}, 
- {x: 0.66, y: 0.67195}, 
- {x: 0.71, y: 0.70149}, 
- {x: 0.81, y: 0.81139}, 
- {x: 0.91, y: 1.11226}, 
- {x: 0.99, y: 3.19913}],
-// laplace(10,1) 
-[{x: 0.05, y: 2e-05}, 
-{x: 1.3, y: 8e-05}, 
-{x: 2.55, y: 0.00029}, 
-{x: 3.8, y: 0.00101}, 
-{x: 5.05, y: 0.00354}, 
-{x: 6.3, y: 0.01236}, 
-{x: 7.55, y: 0.04315}, 
-{x: 8.8, y: 0.1506}, 
-{x: 10.05, y: 0.47561}, 
-{x: 11.3, y: 0.13627}, 
-{x: 12.55, y: 0.03904}, 
-{x: 13.8, y: 0.01119}, 
-{x: 15.05, y: 0.0032}, 
-{x: 16.3, y: 0.00092}, 
-{x: 17.55, y: 0.00026}, 
-{x: 19.55, y: 4e-05}],
-// f(2,2)
-[{x: 0.05, y: 0.90703}, 
-{x: 0.3, y: 0.59172}, 
-{x: 0.55, y: 0.41623}, 
-{x: 0.8, y: 0.30864}, 
-{x: 1.05, y: 0.23795}, 
-{x: 1.3, y: 0.18904}, 
-{x: 1.55, y: 0.15379}, 
-{x: 1.8, y: 0.12755}, 
-{x: 2.05, y: 0.1075}, 
-{x: 2.3, y: 0.09183}, 
-{x: 2.55, y: 0.07935}, 
-{x: 2.8, y: 0.06925}, 
-{x: 3.05, y: 0.06097}, 
-{x: 3.3, y: 0.05408}, 
-{x: 3.55, y: 0.0483}, 
-{x: 3.8, y: 0.0434}, 
-{x: 4.05, y: 0.03921}, 
-{x: 4.3, y: 0.0356}, 
-{x: 4.55, y: 0.03246}, 
-{x: 4.95, y: 0.02825}],
-// rayleigh(1)
-[{x: 0.05, y: 0.04994}, 
-{x: 0.3, y: 0.2868}, 
-{x: 0.55, y: 0.4728}, 
-{x: 0.8, y: 0.58092}, 
-{x: 1.05, y: 0.60504}, 
-{x: 1.3, y: 0.55842}, 
-{x: 1.55, y: 0.46627}, 
-{x: 1.8, y: 0.35622}, 
-{x: 2.05, y: 0.25072}, 
-{x: 2.3, y: 0.16331}, 
-{x: 2.55, y: 0.09875}, 
-{x: 2.8, y: 0.05556}, 
-{x: 3.05, y: 0.02913}, 
-{x: 3.3, y: 0.01425}, 
-{x: 3.55, y: 0.00651}, 
-{x: 3.8, y: 0.00278}, 
-{x: 4.05, y: 0.00111}, 
-{x: 4.3, y: 0.00042}, 
-{x: 4.55, y: 0.00015}, 
-{x: 4.95, y: 2e-05}],
-// gumbel(1,2)
-[{x: 0.05, y: 0.16103}, 
-{x: 1.3, y: 0.18198}, 
-{x: 2.55, y: 0.14532}, 
-{x: 3.8, y: 0.09635}, 
-{x: 5.05, y: 0.05784}, 
-{x: 6.3, y: 0.03292}, 
-{x: 7.55, y: 0.01821}, 
-{x: 8.8, y: 0.00992}, 
-{x: 10.05, y: 0.00536}, 
-{x: 11.3, y: 0.00288}, 
-{x: 12.55, y: 0.00155}, 
-{x: 13.8, y: 0.00083}, 
-{x: 15.05, y: 0.00044}, 
-{x: 16.3, y: 0.00024}, 
-{x: 17.55, y: 0.00013}, 
-{x: 19.55, y: 5e-05}],
-// fréchet(2,1,0)
-[{x: 0.05, y: 0.0}, 
-{x: 0.3, y: 0.00111}, 
-{x: 0.8, y: 0.81879}, 
-{x: 1.05, y: 0.6975}, 
-{x: 1.3, y: 0.50376}, 
-{x: 1.55, y: 0.35422}, 
-{x: 1.8, y: 0.25187}, 
-{x: 2.05, y: 0.18299}, 
-{x: 2.3, y: 0.13607}, 
-{x: 2.55, y: 0.10342}, 
-{x: 2.8, y: 0.0802}, 
-{x: 3.05, y: 0.06331}, 
-{x: 3.3, y: 0.05077}, 
-{x: 3.55, y: 0.04129}, 
-{x: 3.8, y: 0.03401}, 
-{x: 4.05, y: 0.02833}, 
-{x: 4.3, y: 0.02383}, 
-{x: 4.55, y: 0.02023}, 
-{x: 4.95, y: 0.01583}],
-// weibull(1,1)
-[{x: 0.05, y: 0.95123}, 
-{x: 0.3, y: 0.74082}, 
-{x: 0.55, y: 0.57695}, 
-{x: 0.8, y: 0.44933}, 
-{x: 1.05, y: 0.34994}, 
-{x: 1.3, y: 0.27253}, 
-{x: 1.55, y: 0.21225}, 
-{x: 1.8, y: 0.1653}, 
-{x: 2.05, y: 0.12873}, 
-{x: 2.3, y: 0.10026}, 
-{x: 2.55, y: 0.07808}, 
-{x: 2.8, y: 0.06081}, 
-{x: 3.05, y: 0.04736}, 
-{x: 3.3, y: 0.03688}, 
-{x: 3.55, y: 0.02872}, 
-{x: 3.8, y: 0.02237}, 
-{x: 4.05, y: 0.01742}, 
-{x: 4.3, y: 0.01357}, 
-{x: 4.55, y: 0.01057}, 
-{x: 4.95, y: 0.00708}],
-// weibull(1,2)
-[{x: 0.05, y: 0.09975}, 
-{x: 0.3, y: 0.54836}, 
-{x: 0.55, y: 0.81287}, 
-{x: 0.8, y: 0.84367}, 
-{x: 1.05, y: 0.69728}, 
-{x: 1.3, y: 0.47975}, 
-{x: 1.55, y: 0.28052}, 
-{x: 1.8, y: 0.14099}, 
-{x: 2.05, y: 0.06133}, 
-{x: 2.3, y: 0.02319}, 
-{x: 2.55, y: 0.00765}, 
-{x: 2.8, y: 0.0022}, 
-{x: 3.05, y: 0.00056}, 
-{x: 3.3, y: 0.00012}, 
-{x: 3.55, y: 2e-05}, 
-{x: 3.8, y: 0.0}, 
-{x: 4.05, y: 0.0}, 
-{x: 4.3, y: 0.0}, 
-{x: 4.55, y: 0.0}, 
-{x: 4.95, y: 0.0}]
-  ] 
-  // console.log(new_y[i].length)
   line
     .datum(new_y[i])
     .transition()
@@ -807,7 +853,6 @@
           .x(function(d) { 
             {
               // if 20 support is (0,5)  aka xScale_f
-              // return new_y[i].length >17 ?  xScale_beta(d.x) : xScale(d.x) 
               if (new_y[i].length === 20) {
                 return xScale_f(d.x);
               }
@@ -820,7 +865,6 @@
               };
             })
           .y(function(d) { 
-            // return new_y[i].length >17 ?  yScale_beta(d.y) : yScale(d.y)
             if (new_y[i].length === 20) {
               return yScale_f(d.y);
             }
@@ -837,7 +881,7 @@
        .style("stroke-width", 1)
      .style("fill", "none")
       })
-
+    });
   d3.select('#source')
       .styles({'margin-bottom': window.innerHeight - 450 + 'px', padding: '150px'})
 }
