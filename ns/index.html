@@ -669,7 +669,7 @@
                 getting extreme
               </h3>
               <p> 
-                 the next three distribution we are going to make by taking the negative log (or natural log) of a distribution we have already seen. if we take the negative log of the  <strong>exponential distribution</strong> with the <span class="mono">rate=1</span> we get the <strong>gumbel distribution</strong>.
+                 the next three distributions we are going to make by taking the negative log (or natural log) of a distribution we have already seen. if we take the negative log of the  <strong>exponential distribution</strong> with the <span class="mono">rate=1</span> we get the <strong>gumbel distribution</strong>.
               </p>
               <p>gumbel(location, 1) = - log( exponential(1) )</p>
               <p> 
@@ -823,8 +823,8 @@
         .range([0, width]); // output
 
     var yScale = d3.scaleLinear()
-        .domain([0, .6]) // input 
-        .range([height, 0]); // output 
+        .domain([0, .6]) 
+        .range([height, 0]); 
 
     var xScale_beta = d3.scaleLinear()
         .domain([0,1])
