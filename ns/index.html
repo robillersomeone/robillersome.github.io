@@ -294,7 +294,7 @@
                 <strong>fisher's z</strong> (degree 1, degree 2) = log ( <strong>f</strong> (degree 1, degree 2) ) / 2
               </p>
               <p> 
-                here <span class="mono">degree 1=5, degree 1=2</span>. an important note - this distribution is not used in a z-test,
+                here <span class="mono">degree 1=5, degree 2=2</span>. an important note - this distribution is not used in a z-test,
                 for those we use a normal distribution, which is just around the corner.
               </p>
           
@@ -401,8 +401,8 @@
                 <span class="mono">degrees of freedom</span>, here <span class="mono">degrees of freedom=2</span>
               </p>
               <p> 
-                while the <strong>chi-squared distribution</strong> is a parametrization of the <strong>gamma distribution</strong>
-                is is also the sum of squared <strong>normal distributions</strong>, the <strong>chi distribution</strong> 
+                while the <strong>chi-squared distribution</strong> is a parametrization of the <strong>gamma distribution</strong>,
+                it is also the sum of squared <strong>normal distributions</strong>. the <strong>chi distribution</strong> 
                 is the square root of that sum.
               </p>
               <!-- <p>the chi-squared happens a lot? idk... add more here </p> -->
@@ -685,16 +685,16 @@
                 the <strong>fréchet distribution</strong> is built from taking the negative log of the <strong>uniform distribution</strong> and has three parameters <span class="mono">shape</span>, <span class="mono">scale</span> and <span class="mono">location of minimum</span>.
               </p>
               <p>
-                fréchet(shape, scale, location) = location + scale * <var>(- log ( uniform(0,1) ) ) <sup>(1 / shape)</sup></var>
+                fréchet(shape, scale, location) = location + scale * <var>(- log ( uniform(0,1) ) ) <sup>- (1 / shape)</sup></var>
               </p>
               <p> 
                 the formula looks more complicated than the gumbel, but we normally set the <span class="mono">scale=1</span> and <span class="mono">location of minimum=0</span>, so the formula ends up being... 
               </p>
               <p>
-                fréchet(shape, scale, location) = <var>(- log ( uniform(0,1) ) ) <sup>(1 / shape)</sup></var>
+                fréchet(shape, scale, location) = <var>(- log ( uniform(0,1) ) ) <sup>- (1 / shape)</sup></var>
               </p>
               <p> 
-                or just 1 divided by the negative log of the <strong>uniform distribution</strong>, here <span class="mono">shape=2</span>, <span class="mono">scale=1</span> and <span class="mono">location of minimum=0</span>
+                or just the negative log of the <strong>uniform distribution</strong> raised to negative inverse of the shape parameter, here <span class="mono">shape=2</span>, <span class="mono">scale=1</span> and <span class="mono">location of minimum=0</span>
               </p>
             </div>
             <div>
@@ -753,11 +753,9 @@
   .append('svg')
       .attrs({width: width, height: height})
 
-
   // need to find line attrs to start
   // add a line, with svg 'path'
   var path = svg.append('path')
-
 
   var xScale = d3.scaleLinear()
           .domain([0, 20]) // input
@@ -798,7 +796,6 @@
       .style("stroke-width", 1)
       .style("fill", "none")
 
-
   // colors for each new div in the class='sections' div
   // take out first blue, probably no green
   var colors = ["#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black', "#296b0f", 'steelblue', '#6776d1',
@@ -807,7 +804,7 @@
                 "#C86753", "#C86753", 'steelblue', '#6776d1', "#C86753", "#C86753", 'steelblue', '#6776d1', '#0f606b', 'black',
                 "#C86753", "#C86753", 'steelblue']
 
-  // for the line //
+  // for the line 
   var gs = d3.graphScroll()
       .container(d3.select('.container-1')) // only for the container-1 class
       .graph(d3.selectAll('container-1 #graph'))
@@ -816,7 +813,6 @@
       // .offset(innerWidth < 900 ? innerHeight - 30 : 200)
       // when the paragraph div is 'active'
       .on('active', function(i){
-
 
     var xScale = d3.scaleLinear()
         .domain([0, 20]) // input
